@@ -1,0 +1,173 @@
+/* FONT: OPEN SANS */
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/OpenSans-Regular.woff2') format('woff2'),
+         url('/fonts/OpenSans-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Bold (700) */
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/OpenSans-Bold.woff2') format('woff2'),
+         url('/fonts/OpenSans-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Regular Italic (400 italic) */
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/OpenSans-Italic.woff2') format('woff2'),
+         url('/fonts/OpenSans-Italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Bold Italic (700 italic) */
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/OpenSans-BoldItalic.woff2') format('woff2'),
+         url('/fonts/OpenSans-BoldItalic.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Estilo del navbar */
+.navbar {
+    background-color: #f8f9fa; /* Blanco claro */
+}
+
+.navbar-brand img {
+    height: 50px;
+}
+
+.navbar-text {
+    color: #a052b5; /* El color de texto para "El sitio del cine" */
+    font-style: italic;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.social-icons .nav-link {
+    font-size: 18px;
+    color: #663399 !important; /* Color púrpura de los íconos */
+    margin-left: 15px;
+}
+
+.social-icons .nav-link:hover {
+    color: #a052b5; /* Color de hover más claro */
+}
+
+
+/* Estilo del body */
+body {
+    background-image: url('/assets/img/fondo-web.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/*estilos para primeras secciones */
+.bg-purple {
+  background: linear-gradient(to right, #800080, #4B0082);
+}
+
+.small-icon {
+  width: 60px;
+  height: auto;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem; 
+}
+
+
+.main-logo {
+    height: auto;
+    width: 70%;
+}
+
+.movie-poster {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+/*segunda seccion */
+.container-fluid.star-background {
+  background-image: url('/assets/img/fondo-estrellas.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.schedule-section {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.schedule-section img {
+    width: 100%;
+    border-radius: 10px;
+}
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.iframe-container {
+    background-color: magenta;
+    height: 300px; /* Ajusta según lo necesario */
+}
+.map-container {
+    margin-top: 20px;
+    text-align: center;
+}
+        
+.newsletter {
+    border-radius: 25px;
+    background: #ab81cd;
+    padding: 20px;
+}
+.custom-btn i {
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+    font-size: 18px; /* Tamaño del icono */
+}
+
+.custom-btn {
+    font-family: 'Open Sans' ;
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    font-size: 18px; /* Tamaño del texto */
+}
+
+
+@media (max-width: 768px) {
+ .navbar-brand {
+        margin: 0 auto;
+        padding-right: 0;
+        padding-left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .social-icons {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .social-icons .nav-link {
+        margin-left: 10px;
+    }
+
+    /* Background para pantallas móviles */
+    body {
+        background-image: url('/assets/img/fondo-mobile.png');
+    }
+
+    /* Asegúrate de que los íconos se vean y estén centrados */
+    #navbarNav {
+        text-align: center;
+    }
+}
