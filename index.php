@@ -170,7 +170,7 @@ include 'includes/header.php';
             </div>
         </div>
     </div>
-    <div class="row map-container">
+    <div class="row map-container" id="map-container">
         <div class="col-md-12">
             <h2 class="fw-bold text-white bg-dark w-100 p-3"><i class="fas fa-film"></i> ¡NOS VEMOS EN EL CINE! <i
                     class="fas fa-film"></i></h2>

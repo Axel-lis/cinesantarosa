@@ -35,17 +35,21 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav social-icons">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-map-marker-alt"></i></a>
+                        <a class="nav-link" href="#map-container"><i class="fas fa-map-marker-alt"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fab fa-instagram"></i></a>
+                        <a class="nav-link" href="https://www.instagram.com/cinesantarosa/"><i
+                                class="fab fa-instagram"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="nav-link" href="https://x.com/cinesantarosa?lang=es"><i
+                                class="fab fa-twitter"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="nav-link" href="https://www.facebook.com/CinesSantaRosa/"><i
+                                class="fab fa-facebook-f"></i></a>
                     </li>
+
                 </ul>
             </div>
         </div>
