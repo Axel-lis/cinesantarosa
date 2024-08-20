@@ -5,17 +5,17 @@ include 'includes/header.php';
 <div class="container-fluid bg-purple">
     <div class="row py-3">
         <div class="col-4 d-flex flex-column justify-content-around align-items-center">
-            <img src="assets/img/sticker-ticket.png" alt="Ticket" class="small-icon mb-2">
-            <img src="assets/img/sticker-movie.png" alt="Movie" class="small-icon mb-2">
-            <img src="assets/img/sticker-popcorn.png" alt="Popcorn" class="small-icon">
+            <img src="./assets/img/sticker-ticket.png" alt="Ticket" class="small-icon mb-2">
+            <img src="./assets/img/sticker-movie.png" alt="Movie" class="small-icon mb-2">
+            <img src="./assets/img/sticker-popcorn.png" alt="Popcorn" class="small-icon">
         </div>
         <div class="col-4 d-flex justify-content-center align-items-center">
-            <img src="assets/img/logos/milenium-logo.png" alt="Milenium" class="main-logo img-fluid">
+            <img src="./assets/img/logos/milenium-logo.png" alt="Milenium" class="main-logo img-fluid">
         </div>
         <div class="col-4 d-flex flex-column justify-content-around align-items-center">
-            <img src="assets/img/sticker-ticket.png" alt="Ticket" class="small-icon mb-2">
-            <img src="assets/img/sticker-movie.png" alt="Movie" class="small-icon mb-2">
-            <img src="assets/img/sticker-popcorn.png" alt="Popcorn" class="small-icon">
+            <img src="./assets/img/sticker-ticket.png" alt="Ticket" class="small-icon mb-2">
+            <img src="./assets/img/sticker-movie.png" alt="Movie" class="small-icon mb-2">
+            <img src="./assets/img/sticker-popcorn.png" alt="Popcorn" class="small-icon">
         </div>
     </div>
 
@@ -24,21 +24,19 @@ include 'includes/header.php';
             <h2 class="fw-bold"><i class="fas fa-film"></i> ESTA SEMANA EN CINES <i class="fas fa-film"></i></h2>
         </div>
 
-
-
         <div class="row justify-content-center pb-3">
             <div class="col-2">
                 <!--imagenes dinámicas de las peliculas en cartelera-->
-                <img src="/assets/img/ejemplo-movie.png" alt="Movie 1" class="img-fluid movie-poster">
+                <img src="./assets/img/ejemplo-movie.png" alt="Movie 1" class="img-fluid movie-poster">
             </div>
             <div class="col-2">
-                <img src="/assets/img/ejemplo-movie.png" alt="Movie 2" class="img-fluid movie-poster">
+                <img src="./assets/img/ejemplo-movie.png" alt="Movie 2" class="img-fluid movie-poster">
             </div>
             <div class="col-2">
-                <img src="/assets/img/ejemplo-movie.png" alt="Movie 3" class="img-fluid movie-poster">
+                <img src="./assets/img/ejemplo-movie.png" alt="Movie 3" class="img-fluid movie-poster">
             </div>
             <div class="col-2">
-                <img src="/assets/img/ejemplo-movie.png" alt="Movie 4" class="img-fluid movie-poster">
+                <img src="./assets/img/ejemplo-movie.png" alt="Movie 4" class="img-fluid movie-poster">
             </div>
         </div>
     </div>
@@ -50,10 +48,10 @@ include 'includes/header.php';
             <div class="schedule-section">
                 <div class="row">
                     <div class="col-md-3">
-                        <img src="/assets/img/ejemplo-movie.png" alt="Imagen 5">
+                        <img src="./assets/img/ejemplo-movie.png" alt="Imagen 5">
                     </div>
                     <div class="col-md-9 iframe-container">
-                        <!-- Aquí va el iframe -->
+                        <iframe style="height:100%" ng-src="https://www.youtube.com/embed/nflDk6KmDpM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" src="https://www.youtube.com/embed/nflDk6KmDpM"></iframe>
                     </div>
                 </div>
                 <div class="row">
@@ -72,7 +70,7 @@ include 'includes/header.php';
             <div class="schedule-section">
                 <div class="row">
                     <div class="col-md-3">
-                        <img src="/assets/img/ejemplo-movie.png" alt="Imagen 6">
+                        <img src="./assets/img/ejemplo-movie.png" alt="Imagen 6">
                     </div>
                     <div class="col-md-9 iframe-container">
                         <!-- Aquí va el iframe -->
@@ -93,10 +91,10 @@ include 'includes/header.php';
             </div>
         </div>
         <div class="col-md-3 sidebar">
-            <img src="/assets/img/promos.png" alt="Imagen 1" class="img-fluid">
+            <img src="./assets/img/promos.png" alt="Imagen 1" class="img-fluid">
             <div class="mt-5 col-sm-6 col-md-6 col-lg-12 float-left">
                 <div class="container newsletter">
-                    <a href="/assets/contratos/contrato-menores.pdf" target="_blank" style="color:white;">DESCARGUE EL
+                    <a href="./assets/contratos/contrato-menores.pdf" target="_blank" style="color:white;">DESCARGUE EL
                         FORMULARIO<br> MENORES RES. 2890</a>
                 </div>
             </div>
@@ -174,10 +172,7 @@ include 'includes/header.php';
         <div class="col-md-12">
             <h2 class="fw-bold text-white bg-dark w-100 p-3"><i class="fas fa-film"></i> ¡NOS VEMOS EN EL CINE! <i
                     class="fas fa-film"></i></h2>
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.5192627640227!2d-122.08424968469393!3d37.42206577982556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b4a94077ef%3A0x7b1e74eb1b3ddcdd!2sGoogleplex!5e0!3m2!1sen!2sus!4v1605318481234!5m2!1sen!2sus"
-                width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-                tabindex="0"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3202.140545203498!2d-64.29724732441785!3d-36.62300346692783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95c2cd0689920f4f%3A0xb4c0bd2ec262ec5f!2sCine%20Milenium!5e0!3m2!1ses-419!2sar!4v1724192095357!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
 </div>

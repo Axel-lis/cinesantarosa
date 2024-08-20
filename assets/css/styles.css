@@ -1,8 +1,8 @@
 /* FONT: OPEN SANS */
 @font-face {
     font-family: 'Open Sans';
-    src: url('/fonts/OpenSans-Regular.woff2') format('woff2'),
-         url('/fonts/OpenSans-Regular.woff') format('woff');
+    src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
+         url('../fonts/OpenSans-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
@@ -10,8 +10,8 @@
 /* Bold (700) */
 @font-face {
     font-family: 'Open Sans';
-    src: url('/fonts/OpenSans-Bold.woff2') format('woff2'),
-         url('/fonts/OpenSans-Bold.woff') format('woff');
+    src: url('../fonts/OpenSans-Bold.woff2') format('woff2'),
+         url('../fonts/OpenSans-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
 }
@@ -19,8 +19,8 @@
 /* Regular Italic (400 italic) */
 @font-face {
     font-family: 'Open Sans';
-    src: url('/fonts/OpenSans-Italic.woff2') format('woff2'),
-         url('/fonts/OpenSans-Italic.woff') format('woff');
+    src: url('../fonts/OpenSans-Italic.woff2') format('woff2'),
+         url('../fonts/OpenSans-Italic.woff') format('woff');
     font-weight: 400;
     font-style: italic;
 }
@@ -28,8 +28,8 @@
 /* Bold Italic (700 italic) */
 @font-face {
     font-family: 'Open Sans';
-    src: url('/fonts/OpenSans-BoldItalic.woff2') format('woff2'),
-         url('/fonts/OpenSans-BoldItalic.woff') format('woff');
+    src: url('../fonts/OpenSans-BoldItalic.woff2') format('woff2'),
+         url('../fonts/OpenSans-BoldItalic.woff') format('woff');
     font-weight: 700;
     font-style: italic;
 }
@@ -63,7 +63,7 @@
 
 /* Estilo del body */
 body {
-    background-image: url('/assets/img/fondo-web.png');
+    background-image: url('../../assets/img/fondo-web.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -95,7 +95,7 @@ body {
 }
 /*segunda seccion */
 .container-fluid.star-background {
-  background-image: url('/assets/img/fondo-estrellas.png');
+  background-image: url('../../assets/img/fondo-estrellas.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -163,7 +163,7 @@ body {
 
     /* Background para pantallas móviles */
     body {
-        background-image: url('/assets/img/fondo-mobile.png');
+        background-image: url('../../assets/img/fondo-mobile.png');
     }
 
     /* Asegúrate de que los íconos se vean y estén centrados */

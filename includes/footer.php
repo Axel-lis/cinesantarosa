@@ -8,12 +8,12 @@
      <p class="text-center text-white"> &copy; 2024 Cine Milenium. Todos los derechos reservados.</p>
  </footer>
 
- <script src="/assets/js/index.js"></script>
+ <script src="./assets/js/index.js"></script>
 
  <!-- Popper.js -->
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
  <!-- Boootstrap -->
- <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+ <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
  </body>
 
  </html>
