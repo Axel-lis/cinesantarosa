@@ -175,9 +175,10 @@ include 'includes/header.php';
             <h2 class="fw-bold text-white bg-dark w-100 p-3"><i class="fas fa-film"></i> ¡NOS VEMOS EN EL CINE! <i
                     class="fas fa-film"></i></h2>
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.5192627640227!2d-122.08424968469393!3d37.42206577982556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b4a94077ef%3A0x7b1e74eb1b3ddcdd!2sGoogleplex!5e0!3m2!1sen!2sus!4v1605318481234!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.5192627640227!2d-64.29462122673773!3d-36.622982973787465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b4a94077ef%3A0x7b1e74eb1b3ddcdd!2sGoogleplex!5e0!3m2!1sen!2sus!4v1605318481234!5m2!1sen!2sus"
                 width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
                 tabindex="0"></iframe>
+
         </div>
     </div>
 </div>
