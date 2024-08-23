@@ -1,9 +1,10 @@
-# Habilitar la reescritura de URL
+# Habilitar el motor de reescritura
 RewriteEngine On
 
-# Evitar que el servidor trate de aplicar las reglas de reescritura a archivos y directorios existentes
+# Redirigir URLs sin .php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/?$ $1.php [L]
 
-# Reescribir URLs amigables a los archivos PHP correspondientes en la carpeta /pages
-RewriteRule ^([^/]+)/?$ pages/$1.php [L]
+# Opcional: Redirigir /index a /
+RewriteRule ^index$ / [L,R=301]
