@@ -1,15 +1,15 @@
-<?php include __DIR__ . '/../includes/header.php'; ?>
+<?php include __DIR__ . '/includes/header.php'; ?>
 <main class="bg-morePurple pb-5">
     <!-- Banner -->
     <div class="banner">
-        <img src="/assets/img/COMPRA_Banner web.png" alt="Cine Millenium" class="banner-web">
-        <img src="/assets/img/COMPRA_Banner movil.png" alt="Cine Millenium" class="banner-movil">
+        <img src="./assets/img/COMPRA_Banner web.png" alt="Cine Millenium" class="banner-web">
+        <img src="./assets/img/COMPRA_Banner movil.png" alt="Cine Millenium" class="banner-movil">
     </div>
     <!-- Proceso de Compra -->
     <div class="container container-section-compra">
         <div class="proceso-compra">
             <h2 class="fw-bolder mt-2">PROCESO DE COMPRA</h2>
-            <img src="/assets/img/sticker-popcorn.png" alt="Popcorn" class="small-icon">
+            <img src="./assets/img/sticker-popcorn.png" alt="Popcorn" class="small-icon">
         </div>
 
         <!-- Productos -->
@@ -38,12 +38,12 @@
 
         <!-- Imagen Compra -->
         <div class="proceso-compra mt-5">
-            <img src="/assets/img/sticker-ticket.png" alt="Ticket" class="small-icon-3 mb-4">
+            <img src="./assets/img/sticker-ticket.png" alt="Ticket" class="small-icon-3 mb-4">
         </div>
         <!-- Ticket Compra -->
         <div class="row">
-            <img src="/assets/img/COMPRA_Ticket-web.png" alt="Cine Millenium" class="img-fluid ticket-web">
-            <img src="/assets/img/COMPRA_Ticket-Movil.png" alt="Cine Millenium" class="img-fluid ticket-movil">
+            <img src="./assets/img/COMPRA_Ticket-web.png" alt="Cine Millenium" class="img-fluid ticket-web">
+            <img src="./assets/img/COMPRA_Ticket-Movil.png" alt="Cine Millenium" class="img-fluid ticket-movil">
         </div>
         <!-- Detalle de Compra -->
         <div class="row">
@@ -85,7 +85,7 @@
         <div class="detalle-compra">
             <h3 class="text-white text-center fw-bolder my-4">DETALLE DE COMPRA</h3>
             <div class="proceso-compra">
-                <img src="/assets/img/sticker-movie.png" alt="Movie" class="small-icon-2 mb-4">
+                <img src="./assets/img/sticker-movie.png" alt="Movie" class="small-icon-2 mb-4">
             </div>
 
             <table class="table">
@@ -121,4 +121,4 @@
         </div>
     </div>
 </main>
-<?php include __DIR__ . '/../includes/footer.php'; ?>
+<?php include __DIR__ . '/includes/footer.php'; ?>

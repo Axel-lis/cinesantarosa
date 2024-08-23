@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/assets/img/favicon/site.webmanifest">
-    <link rel="mask-icon" href="/assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <title>Cine Milenium | Santa Rosa </title>
     <!-- jQuery-->
-    <script src="/vendor/jQuery/jquery.min.js"></script>
+    <script src="./vendor/jQuery/jquery.min.js"></script>
     <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
     <!--estilos ?v=1 -->
     <link rel="stylesheet" href="../assets/css/styles.css?v=1">
@@ -26,7 +26,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="/index.php">
-                <img src="/assets/img/logos/logo-cine-str.png" alt="Cine Milenium" height="40">
+                <img src="./assets/img/logos/logo-cine-str.png" alt="Cine Milenium" height="40">
             </a>
             <span class="navbar-text">El sitio del cine</span>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"

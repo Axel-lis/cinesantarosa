@@ -7,7 +7,7 @@ $(document).ready(function () {
 
 //abrir seccion de compra
 $('.calendar-cell.funcion').click(function () {
-  window.location.href = '/pages/compra.php';
+  window.location.href = './compra.php';
 });
 
 $('.go-t').click(function () {
