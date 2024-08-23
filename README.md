@@ -17,7 +17,7 @@
 │   
 │
 ├── pages/
-│   ├── cartelera.php      # Páginas
+│   ├── compra.php      # Páginas
 │   ├── contacto.php       
 │   |
 |   └── ...                

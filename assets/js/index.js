@@ -5,14 +5,11 @@ $(document).ready(function () {
   });
 });
 
-$('.go-b').click(function () {
-  $('html,body').animate(
-    {
-      scrollTop: $('#bottom').offset().top,
-    },
-    'slow',
-  );
+//abrir seccion de compra
+$('.calendar-cell.funcion').click(function () {
+  window.location.href = '/pages/compra.php';
 });
+
 $('.go-t').click(function () {
   $('html,body').animate(
     {

@@ -57,23 +57,125 @@ include 'includes/header.php';
                             allowfullscreen="" src="https://www.youtube-nocookie.com/embed/nflDk6KmDpM"></iframe>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12 text-center">
+                <div class="calendar-container">
+                    <div class="calendar-header">
                         <p>SEMANA DEL 01 AL 07 DE DICIEMBRE</p>
-                        <div class="d-flex justify-content-between">
-                            <span>Lunes</span><span>Martes</span><span>Miércoles</span><span>Jueves</span><span>Viernes</span><span>Sábado</span><span>Domingo</span>
+                    </div>
+                    <div class="calendar-grid">
+                        <!-- Agrupar días con sus funciones -->
+                        <div class="day-group">
+                            <div class="calendar-day lunes">Lunes</div>
+                            <div class="calendar-cell funcion">
+                                <div class="flex">
+                                    <span>16:00HS</span> <br>
+                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
+                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
+                                </div>
+                            </div>
+                            <div class="calendar-cell funcion">
+                                <div class="flex">
+                                    <span>22:00HS</span> <br>
+                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
+                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
+                                </div>
+                            </div>
+                            <!-- Añade más celdas según sea necesario -->
                         </div>
-                        <div class="d-flex justify-content-between">
-                            <!-- Horarios -->
-                            <span>20:00HS</span><span>20:00HS</span><span>20:00HS</span><span>20:00HS</span><span>20:00HS</span><span>20:00HS</span><span>20:00HS</span>
+                        <div class="day-group">
+                            <div class="calendar-day martes">Martes</div>
+                            <div class="calendar-cell funcion">
+                                <div class="flex">
+                                    <span>20:00HS</span> <br>
+                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
+                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
+                                </div>
+                            </div>
+                            <!-- Añade más celdas según sea necesario -->
+                        </div>
+                        <div class="day-group">
+                            <div class="calendar-day miercoles">Miercoles</div>
+                            <div class="calendar-cell funcion">
+                                <div class="flex">
+                                    <span>20:00HS</span> <br>
+                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
+                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
+                                </div>
+                            </div>
+                            <!-- Añade más celdas según sea necesario -->
+                        </div>
+                        <div class="day-group">
+                            <div class="calendar-day jueves">Jueves</div>
+                            <div class="calendar-cell funcion">
+                                <div class="flex">
+                                    <span>20:00HS</span> <br>
+                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
+                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
+                                </div>
+                            </div>
+                            <!-- Añade más celdas según sea necesario -->
+                        </div>
+                        <div class="day-group">
+                            <div class="calendar-day viernes">Viernes</div>
+                            <div class="calendar-cell funcion">
+                                <div class="flex">
+                                    <span>10:00HS</span> <br>
+                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
+                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
+                                </div>
+                            </div>
+                            <div class="calendar-cell funcion">
+                                <div class="flex">
+                                    <span>16:00HS</span> <br>
+                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
+                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
+                                </div>
+                            </div>
+                            <!-- Añade más celdas según sea necesario -->
+                        </div>
+                        <div class="day-group">
+                            <div class="calendar-day sabado">Sábado</div>
+                            <div class="calendar-cell funcion">
+                                <div class="flex">
+                                    <span>10:00HS</span> <br>
+                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
+                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
+                                </div>
+                            </div>
+                            <div class="calendar-cell funcion">
+                                <div class="flex">
+                                    <span>20:00HS</span> <br>
+                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
+                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
+                                </div>
+                            </div>
+                            <!-- Añade más celdas según sea necesario -->
+                        </div>
+                        <div class="day-group">
+                            <div class="calendar-day domingo">Domingo</div>
+                            <div class="calendar-cell funcion">
+                                <div class="flex">
+                                    <span>10:00HS</span> <br>
+                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
+                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
+                                </div>
+                            </div>
+                            <div class="calendar-cell funcion">
+                                <div class="flex">
+                                    <span>20:00HS</span> <br>
+                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
+                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
+                                </div>
+                            </div>
+                            <!-- Añade más celdas según sea necesario -->
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="schedule-section mt-5">
                 <div class="row">
                     <div class="col-md-3">
-                        <img src="./assets/img/ejemplo-movie.png" alt="Imagen 6">
+                        <img src="./assets/img/ejemplo-movie.png" alt="Imagen 5">
                     </div>
                     <div class="col-md-9 iframe-container">
                         <iframe style="width:100%; height:100%;"
@@ -82,15 +184,102 @@ include 'includes/header.php';
                             allowfullscreen="" src="https://www.youtube-nocookie.com/embed/nflDk6KmDpM"></iframe>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12 text-center">
+                <div class="calendar-container">
+                    <div class="calendar-header">
                         <p>SEMANA DEL 01 AL 07 DE DICIEMBRE</p>
-                        <div class="d-flex justify-content-between">
-                            <span>Lunes</span><span>Martes</span><span>Miércoles</span><span>Jueves</span><span>Viernes</span><span>Sábado</span><span>Domingo</span>
+                    </div>
+                    <div class="calendar-grid">
+                        <!-- Agrupar días con sus funciones -->
+                        <div class="day-group">
+                            <div class="calendar-day lunes">Lunes</div>
+                            <div class="calendar-cell funcion">
+                                <div class="flex">
+                                    <span>16:00HS</span> <br>
+                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
+                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
+                                </div>
+                            </div>
+                            <div class="calendar-cell funcion">
+                                <div class="flex">
+                                    <span>22:00HS</span> <br>
+                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
+                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
+                                </div>
+                            </div>
+                            <!-- Añade más celdas según sea necesario -->
                         </div>
-                        <div class="d-flex justify-content-between">
-                            <!-- Horarios -->
-                            <span>20:00HS</span><span>20:00HS</span><span>20:00HS</span><span>20:00HS</span><span>20:00HS</span><span>20:00HS</span><span>20:00HS</span>
+                        <div class="day-group">
+                            <div class="calendar-day martes">Martes</div>
+                            <div class="calendar-cell funcion">
+                                <div class="flex">
+                                    <span>20:00HS</span> <br>
+                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
+                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
+                                </div>
+                            </div>
+                            <!-- Añade más celdas según sea necesario -->
+                        </div>
+                        <div class="day-group">
+                            <div class="calendar-day miercoles">Miercoles</div>
+                            <div class="calendar-cell funcion">
+                                <div class="flex">
+                                    <span>20:00HS</span> <br>
+                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
+                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
+                                </div>
+                            </div>
+                            <!-- Añade más celdas según sea necesario -->
+                        </div>
+                        <div class="day-group">
+                            <div class="calendar-day jueves">Jueves</div>
+                            <div class="calendar-cell funcion">
+                                <div class="flex">
+                                    <span>20:00HS</span> <br>
+                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
+                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
+                                </div>
+                            </div>
+                            <!-- Añade más celdas según sea necesario -->
+                        </div>
+                        <div class="day-group">
+                            <div class="calendar-day viernes">Viernes</div>
+                            <div class="calendar-cell funcion">
+                                <div class="flex">
+                                    <span>10:00HS</span> <br>
+                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
+                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
+                                </div>
+                            </div>
+                            <div class="calendar-cell funcion">
+                                <div class="flex">
+                                    <span>16:00HS</span> <br>
+                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
+                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
+                                </div>
+                            </div>
+                            <!-- Añade más celdas según sea necesario -->
+                        </div>
+                        <div class="day-group">
+                            <div class="calendar-day sabado">Sábado</div>
+                            <div class="calendar-cell funcion">
+                                <div class="flex">
+                                    <span>20:00HS</span> <br>
+                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
+                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
+                                </div>
+                            </div>
+                            <!-- Añade más celdas según sea necesario -->
+                        </div>
+                        <div class="day-group">
+                            <div class="calendar-day domingo">Domingo</div>
+                            <div class="calendar-cell funcion">
+                                <div class="flex">
+                                    <span>20:00HS</span> <br>
+                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
+                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
+                                </div>
+                            </div>
+                            <!-- Añade más celdas según sea necesario -->
                         </div>
                     </div>
                 </div>

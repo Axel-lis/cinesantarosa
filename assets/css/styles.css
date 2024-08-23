@@ -10,13 +10,13 @@
 
 /* Italic (weights 100 to 900) */
 @font-face {
-  font-family: 'Open Sans' ;
+  font-family: 'Open Sans';
   src: url('../fonts/OpenSans-Italic-VariableFont_wght.ttf') format('truetype');
   font-weight: 100 900;
   font-style: italic;
 }
 
-*{
+* {
   font-family: 'Open Sans', sans-serif;
 }
 /* Estilo del navbar */
@@ -87,7 +87,7 @@ body {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
-  cursor:pointer;
+  cursor: pointer;
   box-shadow: 7px 10px 4px 7px rgba(25, 25, 25, 0.8);
 }
 
@@ -142,7 +142,7 @@ body {
 }
 
 .custom-btn {
-  font-family: 'Open Sans', sans-serif;;
+  font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
   /* Texto en mayúsculas */
   letter-spacing: 1px;
@@ -165,7 +165,7 @@ body {
 }
 
 .bg-morePurple {
-  background-color: #1D1B3A !important;
+  background-color: #1d1b3a !important;
 }
 .producto {
   background-image: url('/assets/img/COMPRA_Contenedor.png');
@@ -174,9 +174,9 @@ body {
   border-radius: 10px 10px 0 0;
   padding: 20px;
   text-align: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.texto-producto{
+.texto-producto {
   background-image: url('/assets/img/fondo-ticket-compra.png');
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
@@ -196,7 +196,7 @@ body {
 }
 
 .buttonAgregar {
-  background-color: #FFC107;
+  background-color: #ffc107;
   color: black;
   border: none;
   border-radius: 0 0 10px 10px;
@@ -211,36 +211,36 @@ body {
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
 
-.buttonAgregar:hover, 
-.buttonAgregar:focus, 
+.buttonAgregar:hover,
+.buttonAgregar:focus,
 .buttonAgregar:active {
   animation-name: hvr-push;
   animation-duration: 0.3s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
 }
-.ticket-web{
+.ticket-web {
   display: block;
 }
-.ticket-movil{
+.ticket-movil {
   display: none;
 }
-.table thead th{
-  background-color: #A991D4 !important;
+.table thead th {
+  background-color: #a991d4 !important;
   color: white;
 }
 .fixed-button {
-    position: fixed;
-    width: 15em;
-    height: 3em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #8B005D;
-    color: #fff; 
-    font-size: 1.8em;
-    border: none;
-    cursor: pointer;
+  position: fixed;
+  width: 15em;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8b005d;
+  color: #fff;
+  font-size: 1.8em;
+  border: none;
+  cursor: pointer;
 }
 
 .go-b {
@@ -251,7 +251,7 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #8B005D; 
+  background-color: #8b005d;
   position: relative;
 }
 
@@ -263,7 +263,6 @@ body {
   background-color: #fff;
   top: 50%;
   left: 50%;
-
 }
 
 .arrow-up:before {
@@ -272,6 +271,66 @@ body {
 
 .arrow-up:after {
   transform: translate(-50%, -50%) rotate(-45deg);
+}
+.calendar-container {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.calendar-header p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  margin-top: 10px;
+}
+.calendar-day.lunes,
+.calendar-day.martes,
+.calendar-day.miercoles,
+.calendar-day.jueves,
+.calendar-day.viernes,
+.calendar-day.sabado,
+.calendar-day.domingo {
+  background-color: #ab81cd;
+}
+.calendar-day {
+  padding: 10px;
+  background-color: #3b3f4b;
+  color: white;
+  border: 1px solid #252833;
+}
+.calendar-day.lunes {
+  border-top-left-radius: 18px;
+}
+
+.calendar-day.domingo {
+  border-top-right-radius: 18px;
+}
+.calendar-cell {
+  padding: 10px;
+  background-color: #3b3f4b;
+  color: white;
+  text-align: center;
+  border: 1px solid #252833;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease-in-out;
+  cursor:pointer;
+}
+.calendar-cell:hover{
+  background-color: #F8B01D;
+}
+.calendar-cell.filled {
+  background-color: #1e90ff;
+}
+.schedule-section img.etiquetas{
+ width: 35px ;
 }
 @media (max-width: 768px) {
   .navbar-brand {
@@ -310,12 +369,53 @@ body {
     width: 100%;
     /* Asegura que el banner móvil se ajuste al ancho de la pantalla */
   }
-  .ticket-movil{
-  display: block;
+  .ticket-movil {
+    display: block;
+  }
+  .ticket-web {
+    display: none;
+  }
+  /* Asegura que cada día tenga su propia fila */
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna */
+    gap: 0; /* Sin espacio entre las filas */
+  }
+
+  .calendar-day {
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    border-top: 1px solid #252833; /* Añade borde superior */
+    border-bottom: 1px solid #252833; /* Añade borde inferior */
+  }
+
+  .calendar-day.lunes {
+    border-top-left-radius: 0;
+  }
+
+  .calendar-day.domingo {
+    border-top-right-radius: 0;
+  }
+
+  .calendar-cell {
+    width: 100%; /* Cada celda ocupa el 100% del ancho */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: none;
+    border-bottom: 1px solid #252833; /* Añade borde inferior */
+  }
+.schedule-section img {
+  width: 280px;
+  border-radius: 10px;
+  margin-left: 10%;
 }
-.ticket-web{
-  display: none;
-}
+  /* Ajusta el tamaño de las imágenes de las etiquetas en móvil */
+  .schedule-section img.etiquetas {
+    width: 25px;
+  }
 }
 
 /* Ajuste del banner de escritorio en pantallas grandes */
