@@ -1,173 +1,332 @@
-/* FONT: OPEN SANS */
+/* Open Sans Variable Font (Normal and Italic) */
+
+/* Regular and Bold (weights 100 to 900) */
 @font-face {
-    font-family: 'Open Sans';
-    src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
-         url('../fonts/OpenSans-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
 }
 
-/* Bold (700) */
+/* Italic (weights 100 to 900) */
 @font-face {
-    font-family: 'Open Sans';
-    src: url('../fonts/OpenSans-Bold.woff2') format('woff2'),
-         url('../fonts/OpenSans-Bold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
+  font-family: 'Open Sans' ;
+  src: url('../fonts/OpenSans-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
 }
 
-/* Regular Italic (400 italic) */
-@font-face {
-    font-family: 'Open Sans';
-    src: url('../fonts/OpenSans-Italic.woff2') format('woff2'),
-         url('../fonts/OpenSans-Italic.woff') format('woff');
-    font-weight: 400;
-    font-style: italic;
+*{
+  font-family: 'Open Sans', sans-serif;
 }
-
-/* Bold Italic (700 italic) */
-@font-face {
-    font-family: 'Open Sans';
-    src: url('../fonts/OpenSans-BoldItalic.woff2') format('woff2'),
-         url('../fonts/OpenSans-BoldItalic.woff') format('woff');
-    font-weight: 700;
-    font-style: italic;
-}
-
 /* Estilo del navbar */
 .navbar {
-    background-color: #f8f9fa; /* Blanco claro */
+  background-color: #f8f9fa;
+  /* Blanco claro */
 }
 
 .navbar-brand img {
-    height: 50px;
+  height: 50px;
 }
 
 .navbar-text {
-    color: #a052b5; /* El color de texto para "El sitio del cine" */
-    font-style: italic;
-    margin-left: 10px;
-    margin-right: 10px;
+  color: #a052b5;
+  /* El color de texto para "El sitio del cine" */
+  font-style: italic;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .social-icons .nav-link {
-    font-size: 18px;
-    color: #663399 !important; /* Color púrpura de los íconos */
-    margin-left: 15px;
+  font-size: 18px;
+  color: #663399 !important;
+  /* Color púrpura de los íconos */
+  margin-left: 15px;
 }
 
 .social-icons .nav-link:hover {
-    color: #a052b5; /* Color de hover más claro */
+  color: #a052b5;
+  /* Color de hover más claro */
 }
-
 
 /* Estilo del body */
 body {
-    background-image: url('../../assets/img/fondo-web.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url('/assets/img/fondo-web.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 /*estilos para primeras secciones */
 .bg-purple {
-  background: linear-gradient(to right, #800080, #4B0082);
+  background: linear-gradient(to right, #800080, #4b0082);
 }
 
 .small-icon {
   width: 60px;
   height: auto;
 }
-
+.small-icon-2 {
+  width: 80px;
+  height: auto;
+}
+.small-icon-3 {
+  width: 110px;
+  height: auto;
+}
 .mb-2 {
-  margin-bottom: 0.5rem; 
+  margin-bottom: 0.5rem;
 }
 
-
 .main-logo {
-    height: auto;
-    width: 70%;
+  height: auto;
+  width: 70%;
 }
 
 .movie-poster {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
+  cursor:pointer;
+  box-shadow: 7px 10px 4px 7px rgba(25, 25, 25, 0.8);
 }
+
 /*segunda seccion */
 .container-fluid.star-background {
-  background-image: url('../../assets/img/fondo-estrellas.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url('/assets/img/fondo-estrellas.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .schedule-section {
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
 }
+
 .schedule-section img {
-    width: 100%;
-    border-radius: 10px;
+  width: 84%;
+  border-radius: 10px;
 }
+
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
+
 .iframe-container {
-    background-color: magenta;
-    height: 300px; /* Ajusta según lo necesario */
+  background-color: rgb(25, 25, 25);
+  height: 300px;
+  /* Ajusta según lo necesario */
 }
+
 .map-container {
-    margin-top: 20px;
-    text-align: center;
+  margin-top: 20px;
+  text-align: center;
 }
-        
+
 .newsletter {
-    border-radius: 25px;
-    background: #ab81cd;
-    padding: 20px;
+  border-radius: 25px;
+  background: #ab81cd;
+  padding: 20px;
 }
+
 .custom-btn i {
-    margin-right: 8px; /* Espacio entre el icono y el texto */
-    font-size: 18px; /* Tamaño del icono */
+  margin-right: 8px;
+  /* Espacio entre el icono y el texto */
+  font-size: 18px;
+  /* Tamaño del icono */
 }
 
 .custom-btn {
-    font-family: 'Open Sans' ;
-    text-transform: uppercase; /* Texto en mayúsculas */
-    letter-spacing: 1px; /* Espaciado entre letras */
-    font-size: 18px; /* Tamaño del texto */
+  font-family: 'Open Sans', sans-serif;;
+  text-transform: uppercase;
+  /* Texto en mayúsculas */
+  letter-spacing: 1px;
+  /* Espaciado entre letras */
+  font-size: 18px;
+  /* Tamaño del texto */
 }
 
+/* Estilos por defecto para ocultar el banner móvil en escritorio */
+.banner-movil {
+  display: none;
+}
 
+.proceso-compra {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  color: #fff;
+}
+
+.bg-morePurple {
+  background-color: #1D1B3A !important;
+}
+.producto {
+  background-image: url('/assets/img/COMPRA_Contenedor.png');
+  background-size: cover;
+  height: 300px;
+  border-radius: 10px 10px 0 0;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.texto-producto{
+  background-image: url('/assets/img/fondo-ticket-compra.png');
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 0 !important;
+}
+@keyframes hvr-push {
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.buttonAgregar {
+  background-color: #FFC107;
+  color: black;
+  border: none;
+  border-radius: 0 0 10px 10px;
+  padding: 10px;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.buttonAgregar:hover, 
+.buttonAgregar:focus, 
+.buttonAgregar:active {
+  animation-name: hvr-push;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+.ticket-web{
+  display: block;
+}
+.ticket-movil{
+  display: none;
+}
+.table thead th{
+  background-color: #A991D4 !important;
+  color: white;
+}
+.fixed-button {
+    position: fixed;
+    width: 15em;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8B005D;
+    color: #fff; 
+    font-size: 1.8em;
+    border: none;
+    cursor: pointer;
+}
+
+.go-b {
+  bottom: 0;
+  margin-bottom: 10px;
+}
+.arrow-up {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #8B005D; 
+  position: relative;
+}
+
+.arrow-up:before,
+.arrow-up:after {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+
+}
+
+.arrow-up:before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.arrow-up:after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
 @media (max-width: 768px) {
- .navbar-brand {
-        margin: 0 auto;
-        padding-right: 0;
-        padding-left: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .social-icons {
-        justify-content: center;
-        margin-top: 10px;
-    }
+  .navbar-brand {
+    margin: 0 auto;
+    padding-right: 0;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .social-icons .nav-link {
-        margin-left: 10px;
-    }
+  .social-icons {
+    justify-content: center;
+    margin-top: 10px;
+  }
 
-    /* Background para pantallas móviles */
-    body {
-        background-image: url('../../assets/img/fondo-mobile.png');
-    }
+  .social-icons .nav-link {
+    margin-left: 10px;
+  }
 
-    /* Asegúrate de que los íconos se vean y estén centrados */
-    #navbarNav {
-        text-align: center;
-    }
+  /* Background para pantallas móviles */
+  body {
+    background-image: url('/assets/img/fondo-mobile.png');
+  }
+
+  #navbarNav {
+    text-align: center;
+  }
+
+  .banner-web {
+    display: none;
+  }
+
+  .banner-movil {
+    display: block;
+    width: 100%;
+    /* Asegura que el banner móvil se ajuste al ancho de la pantalla */
+  }
+  .ticket-movil{
+  display: block;
+}
+.ticket-web{
+  display: none;
+}
+}
+
+/* Ajuste del banner de escritorio en pantallas grandes */
+@media (min-width: 768px) {
+  .banner-web {
+    display: block;
+    width: 100%;
+    /* Asegura que el banner web se ajuste al ancho de la pantalla */
+  }
+
+  .banner-movil {
+    display: none;
+  }
 }

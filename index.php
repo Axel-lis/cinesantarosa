@@ -45,15 +45,16 @@ include 'includes/header.php';
 <div class="container-fluid star-background">
     <div class="row text-white">
         <div class="col-md-9">
-            <div class="schedule-section">
+            <div class="schedule-section mt-5">
                 <div class="row">
                     <div class="col-md-3">
                         <img src="./assets/img/ejemplo-movie.png" alt="Imagen 5">
                     </div>
                     <div class="col-md-9 iframe-container">
-                        <iframe style="height:100%" ng-src="https://www.youtube.com/embed/nflDk6KmDpM" frameborder="0"
+                        <iframe style="width:100%; height:100%;"
+                            ng-src="https://www.youtube-nocookie.com/embed/nflDk6KmDpM" frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen="" src="https://www.youtube.com/embed/nflDk6KmDpM"></iframe>
+                            allowfullscreen="" src="https://www.youtube-nocookie.com/embed/nflDk6KmDpM"></iframe>
                     </div>
                 </div>
                 <div class="row">
@@ -69,13 +70,16 @@ include 'includes/header.php';
                     </div>
                 </div>
             </div>
-            <div class="schedule-section">
+            <div class="schedule-section mt-5">
                 <div class="row">
                     <div class="col-md-3">
                         <img src="./assets/img/ejemplo-movie.png" alt="Imagen 6">
                     </div>
                     <div class="col-md-9 iframe-container">
-                        <!-- Aquí va el iframe -->
+                        <iframe style="width:100%; height:100%;"
+                            ng-src="https://www.youtube-nocookie.com/embed/nflDk6KmDpM" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen="" src="https://www.youtube-nocookie.com/embed/nflDk6KmDpM"></iframe>
                     </div>
                 </div>
                 <div class="row">
