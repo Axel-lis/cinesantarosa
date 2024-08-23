@@ -25,17 +25,17 @@ include 'includes/header.php';
         </div>
 
         <div class="row justify-content-center pb-3">
-            <div class="col-2">
+            <div class="col-3">
                 <!--imagenes dinámicas de las peliculas en cartelera-->
                 <img src="./assets/img/ejemplo-movie.png" alt="Movie 1" class="img-fluid movie-poster">
             </div>
-            <div class="col-2">
+            <div class="col-3">
                 <img src="./assets/img/ejemplo-movie.png" alt="Movie 2" class="img-fluid movie-poster">
             </div>
-            <div class="col-2">
+            <div class="col-3">
                 <img src="./assets/img/ejemplo-movie.png" alt="Movie 3" class="img-fluid movie-poster">
             </div>
-            <div class="col-2">
+            <div class="col-3">
                 <img src="./assets/img/ejemplo-movie.png" alt="Movie 4" class="img-fluid movie-poster">
             </div>
         </div>

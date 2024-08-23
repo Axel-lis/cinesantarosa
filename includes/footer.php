@@ -1,4 +1,4 @@
-<div class="align-items-end">
+<div class="align-items-end mb-5 pb-4">
     <button class="go-t fixed-button arrow-up float-end mx-2">▲</button>
 </div>
 <!-- Pie de página -->

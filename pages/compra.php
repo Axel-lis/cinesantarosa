@@ -1,5 +1,5 @@
 <?php include __DIR__ . '/../includes/header.php'; ?>
-<main class="bg-morePurple">
+<main class="bg-morePurple pb-5">
     <!-- Banner -->
     <div class="banner">
         <img src="/assets/img/COMPRA_Banner web.png" alt="Cine Millenium" class="banner-web">
