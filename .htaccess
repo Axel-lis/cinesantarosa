@@ -1,0 +1,9 @@
+# Habilitar la reescritura de URL
+RewriteEngine On
+
+# Evitar que el servidor trate de aplicar las reglas de reescritura a archivos y directorios existentes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Reescribir URLs amigables a los archivos PHP correspondientes en la carpeta /pages
+RewriteRule ^([^/]+)/?$ pages/$1.php [L]
