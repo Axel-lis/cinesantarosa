@@ -364,15 +364,17 @@ include 'includes/header.php';
         </div>
     </div>
     <div class="row map-container" id="map-container">
-        <div class="col-md-12">
-            <h2 class="fw-bold text-white bg-dark w-100 p-3"><i class="fas fa-film"></i> ¡NOS VEMOS EN EL CINE! <i
-                    class="fas fa-film"></i></h2>
+        <div class="col-12">
+            <h2 class="fw-bold text-white bg-dark w-100 p-3">
+                <i class="fas fa-film"></i> ¡NOS VEMOS EN EL CINE! <i class="fas fa-film"></i>
+            </h2>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3202.140545203498!2d-64.29724732441785!3d-36.62300346692783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95c2cd0689920f4f%3A0xb4c0bd2ec262ec5f!2sCine%20Milenium!5e0!3m2!1ses-419!2sar!4v1724192095357!5m2!1ses-419!2sar"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
+
 </div>
 
 <?php
