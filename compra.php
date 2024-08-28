@@ -13,9 +13,9 @@
         </div>
 
         <!-- Productos -->
-        <div class="row text-center">
-            <div class="col-6 col-md-3 p-3">
-                <div class="producto"> IMAGEN </div>
+        <div class="row text-center" id="productos-container">
+            <!--<div class="col-6 col-md-3 p-3">
+                <div class="producto" id="imagenes-container"> IMAGEN </div>
                 <p class="texto-producto">COMBO FAN</p>
                 <button class="buttonAgregar">Agregar</button>
             </div>
@@ -33,7 +33,7 @@
                 <div class="producto"> IMAGEN </div>
                 <p class="texto-producto">COMBO FAN</p>
                 <button class="buttonAgregar">Agregar</button>
-            </div>
+            </div> -->
         </div>
 
         <!-- Imagen Compra -->
