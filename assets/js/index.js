@@ -83,11 +83,10 @@ function renderPeliculas() {
 }
 
 function renderSemanas(codigopelicula, semanas) {
-  //console.log('Código de película:', codigopelicula);
-  //console.log('Objeto semanas completo:', semanas);
-
   const diasem = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
+
   for (const [id, semana] of Object.entries(semanas)) {
+    //console.log(`Procesando ${semana.nombresemana}`);
     $('<div class="calendar-header"><p>SEMANA DEL ' + semana.nombresemana + '</p></div>').appendTo(
       '#calendar' + codigopelicula,
     );
@@ -98,43 +97,74 @@ function renderSemanas(codigopelicula, semanas) {
     //console.log('Datos de la grilla:', grillaData);
 
     for (let i = 0; i < diasem.length; i++) {
-      let grupo = $('<div class="day-group"></div>').appendTo(grilla);
       let diaData = grillaData[i];
       let diaTitulo = semana.titulos[i];
 
       // Extraer el título del día del objeto
       let tituloMostrar = diaTitulo.titulo || diasem[i].charAt(0).toUpperCase() + diasem[i].slice(1);
 
-      $(`<div class="calendar-day ${diasem[i]}">${tituloMostrar}</div>`).appendTo(grupo);
+      // Verificar si hay más de una función para el día
+      if (diaData && diaData.length > 1) {
+        // Si hay más de una función, agregar una fila por cada función
+        diaData.forEach((funcion) => {
+          let grupo = $('<div class="day-group"></div>').appendTo(grilla);
+          $(`<div class="calendar-day ${diasem[i]}">${tituloMostrar}</div>`).appendTo(grupo);
 
-      if (diaData && !diaData.empty) {
-        //console.log('FUNCION TIME:', diaData.txtime);
+          // Crear un array con las etiquetas disponibles
+          let etiquetas = [];
+          if (funcion.shico1) etiquetas.push(funcion.shico1.toLowerCase());
+          if (funcion.shico2) etiquetas.push(funcion.shico2.toLowerCase());
 
-        // Crear un array con las etiquetas disponibles
-        let etiquetas = [];
-        if (diaData.shico1) etiquetas.push(diaData.shico1.toLowerCase());
-        if (diaData.shico2) etiquetas.push(diaData.shico2.toLowerCase());
-
-        let celda = $(`
-          <div class="calendar-cell funcion">
-            <div class="flex">
-              <span>${diaData.txtime || 'Horario no disponible'}</span> <br>
-              ${etiquetas
-                .map(
-                  (etiqueta) =>
-                    `<img src="./assets/img/etiquetas/etiqueta-${etiqueta}.png" class="etiquetas" alt="${etiqueta}">`,
-                )
-                .join('')}
+          let celda = $(`
+            <div class="calendar-cell funcion">
+              <div class="flex">
+                <span>${funcion.txtime || 'Horario no disponible'}</span> <br>
+                ${etiquetas
+                  .map(
+                    (etiqueta) =>
+                      `<img src="./assets/img/etiquetas/etiqueta-${etiqueta}.png" class="etiquetas" alt="${etiqueta}">`,
+                  )
+                  .join('')}
+              </div>
             </div>
-          </div>
-        `).appendTo(grupo);
+          `).appendTo(grupo);
 
-        celda.click(function () {
-          window.location.href = './compra.php';
+          celda.click(function () {
+            window.location.href = './compra.php';
+          });
         });
       } else {
-        //console.log('No hay función para', diasem[i]);
-        $('<div class="calendar-cell"></div>').appendTo(grupo);
+        // Si no hay más de una función, o no hay función, se procesa normalmente
+        let grupo = $('<div class="day-group"></div>').appendTo(grilla);
+        $(`<div class="calendar-day ${diasem[i]}">${tituloMostrar}</div>`).appendTo(grupo);
+
+        if (diaData && !diaData.empty) {
+          // Crear un array con las etiquetas disponibles
+          let etiquetas = [];
+          if (diaData.shico1) etiquetas.push(diaData.shico1.toLowerCase());
+          if (diaData.shico2) etiquetas.push(diaData.shico2.toLowerCase());
+
+          let celda = $(`
+            <div class="calendar-cell funcion">
+              <div class="flex">
+                <span>${diaData.txtime || 'Horario no disponible'}</span> <br>
+                ${etiquetas
+                  .map(
+                    (etiqueta) =>
+                      `<img src="./assets/img/etiquetas/etiqueta-${etiqueta}.png" class="etiquetas" alt="${etiqueta}">`,
+                  )
+                  .join('')}
+              </div>
+            </div>
+          `).appendTo(grupo);
+
+          celda.click(function () {
+            window.location.href = './compra.php';
+          });
+        } else {
+          //console.log('No hay función para', diasem[i]);
+          $('<div class="empty-cell"></div>').appendTo(grupo);
+        }
       }
     }
   }

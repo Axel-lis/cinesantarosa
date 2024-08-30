@@ -47,7 +47,7 @@ include 'includes/header.php';
                 </div>
                 <div class="calendar-container">
                     <div class="calendar-header">
-                        <p>SEMANA DEL 01 AL 07 DE DICIEMBRE</p>
+                        <p>SEMANA DEL xx AL xx DE xx</p>
                     </div>
                     <div class="calendar-grid">
                         <!-- Agrupar días con sus funciones -->
@@ -55,16 +55,10 @@ include 'includes/header.php';
                             <div class="calendar-day lunes">Lunes</div>
                             <div class="calendar-cell funcion">
                                 <div class="flex">
-                                    <span>16:00HS</span> <br>
-                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
-                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
                                 </div>
                             </div>
                             <div class="calendar-cell funcion">
                                 <div class="flex">
-                                    <span>22:00HS</span> <br>
-                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
-                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
                                 </div>
                             </div>
                             <!-- Añade más celdas según sea necesario -->
@@ -73,9 +67,6 @@ include 'includes/header.php';
                             <div class="calendar-day martes">Martes</div>
                             <div class="calendar-cell funcion">
                                 <div class="flex">
-                                    <span>20:00HS</span> <br>
-                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
-                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
                                 </div>
                             </div>
                             <!-- Añade más celdas según sea necesario -->
@@ -84,9 +75,6 @@ include 'includes/header.php';
                             <div class="calendar-day miercoles">Miercoles</div>
                             <div class="calendar-cell funcion">
                                 <div class="flex">
-                                    <span>20:00HS</span> <br>
-                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
-                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
                                 </div>
                             </div>
                             <!-- Añade más celdas según sea necesario -->
@@ -95,9 +83,6 @@ include 'includes/header.php';
                             <div class="calendar-day jueves">Jueves</div>
                             <div class="calendar-cell funcion">
                                 <div class="flex">
-                                    <span>20:00HS</span> <br>
-                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
-                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
                                 </div>
                             </div>
                             <!-- Añade más celdas según sea necesario -->
@@ -106,16 +91,10 @@ include 'includes/header.php';
                             <div class="calendar-day viernes">Viernes</div>
                             <div class="calendar-cell funcion">
                                 <div class="flex">
-                                    <span>10:00HS</span> <br>
-                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
-                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
                                 </div>
                             </div>
                             <div class="calendar-cell funcion">
                                 <div class="flex">
-                                    <span>16:00HS</span> <br>
-                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
-                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
                                 </div>
                             </div>
                             <!-- Añade más celdas según sea necesario -->
@@ -124,16 +103,10 @@ include 'includes/header.php';
                             <div class="calendar-day sabado">Sábado</div>
                             <div class="calendar-cell funcion">
                                 <div class="flex">
-                                    <span>10:00HS</span> <br>
-                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
-                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
                                 </div>
                             </div>
                             <div class="calendar-cell funcion">
                                 <div class="flex">
-                                    <span>20:00HS</span> <br>
-                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
-                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
                                 </div>
                             </div>
                             <!-- Añade más celdas según sea necesario -->
@@ -142,16 +115,10 @@ include 'includes/header.php';
                             <div class="calendar-day domingo">Domingo</div>
                             <div class="calendar-cell funcion">
                                 <div class="flex">
-                                    <span>10:00HS</span> <br>
-                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
-                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
                                 </div>
                             </div>
                             <div class="calendar-cell funcion">
                                 <div class="flex">
-                                    <span>20:00HS</span> <br>
-                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
-                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
                                 </div>
                             </div>
                             <!-- Añade más celdas según sea necesario -->
@@ -174,7 +141,7 @@ include 'includes/header.php';
                 </div>
                 <div class="calendar-container">
                     <div class="calendar-header">
-                        <p>SEMANA DEL 01 AL 07 DE DICIEMBRE</p>
+                        <p>SEMANA DEL xxx AL xx DE xxx</p>
                     </div>
                     <div class="calendar-grid">
                         <!-- Agrupar días con sus funciones -->
@@ -182,16 +149,10 @@ include 'includes/header.php';
                             <div class="calendar-day lunes">Lunes</div>
                             <div class="calendar-cell funcion">
                                 <div class="flex">
-                                    <span>16:00HS</span> <br>
-                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
-                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
                                 </div>
                             </div>
                             <div class="calendar-cell funcion">
                                 <div class="flex">
-                                    <span>22:00HS</span> <br>
-                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
-                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
                                 </div>
                             </div>
                             <!-- Añade más celdas según sea necesario -->
@@ -200,9 +161,6 @@ include 'includes/header.php';
                             <div class="calendar-day martes">Martes</div>
                             <div class="calendar-cell funcion">
                                 <div class="flex">
-                                    <span>20:00HS</span> <br>
-                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
-                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
                                 </div>
                             </div>
                             <!-- Añade más celdas según sea necesario -->
@@ -211,9 +169,6 @@ include 'includes/header.php';
                             <div class="calendar-day miercoles">Miercoles</div>
                             <div class="calendar-cell funcion">
                                 <div class="flex">
-                                    <span>20:00HS</span> <br>
-                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
-                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
                                 </div>
                             </div>
                             <!-- Añade más celdas según sea necesario -->
@@ -222,9 +177,6 @@ include 'includes/header.php';
                             <div class="calendar-day jueves">Jueves</div>
                             <div class="calendar-cell funcion">
                                 <div class="flex">
-                                    <span>20:00HS</span> <br>
-                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
-                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
                                 </div>
                             </div>
                             <!-- Añade más celdas según sea necesario -->
@@ -233,16 +185,10 @@ include 'includes/header.php';
                             <div class="calendar-day viernes">Viernes</div>
                             <div class="calendar-cell funcion">
                                 <div class="flex">
-                                    <span>10:00HS</span> <br>
-                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
-                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
                                 </div>
                             </div>
                             <div class="calendar-cell funcion">
                                 <div class="flex">
-                                    <span>16:00HS</span> <br>
-                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
-                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
                                 </div>
                             </div>
                             <!-- Añade más celdas según sea necesario -->
@@ -251,9 +197,6 @@ include 'includes/header.php';
                             <div class="calendar-day sabado">Sábado</div>
                             <div class="calendar-cell funcion">
                                 <div class="flex">
-                                    <span>20:00HS</span> <br>
-                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
-                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
                                 </div>
                             </div>
                             <!-- Añade más celdas según sea necesario -->
@@ -262,9 +205,6 @@ include 'includes/header.php';
                             <div class="calendar-day domingo">Domingo</div>
                             <div class="calendar-cell funcion">
                                 <div class="flex">
-                                    <span>20:00HS</span> <br>
-                                    <img src="./assets/img/etiquetas/etiqueta-hd.png" class="etiquetas" alt="">
-                                    <img src="./assets/img/etiquetas/etiqueta-subtitulado.png" class="etiquetas" alt="">
                                 </div>
                             </div>
                             <!-- Añade más celdas según sea necesario -->
@@ -281,74 +221,7 @@ include 'includes/header.php';
                         FORMULARIO<br> MENORES RES. 2890</a>
                 </div>
             </div>
-            <div class="mt-5 col-sm-6 col-md-6 col-lg-12 d-none d-lg-block float-right">
-                <div class="container newsletter">
-                    <form
-                        action="//cinesantarosa.us14.list-manage.com/subscribe/post?u=6e367e515cfec909f57abe5fd&amp;id=ac4082f719"
-                        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
-                        class="validate ng-pristine ng-valid" target="_blank" novalidate="">
-                        <div id="mc_embed_signup_scroll">
-                            <h2 class="letraVioleta">¡Suscribite a nuestro newsletter!</h2>
-                            <div class="indicates-required"><span class="asterisk">*</span> requerido</div>
-                            <br>
-                            <div class="mc-field-group">
-                                <label for="mce-EMAIL">Email <span class="asterisk">*</span>
-                                </label>
-                                <md-input-container class="md-block">
-                                    <input type="email" value="" name="EMAIL" class="required email md-input"
-                                        id="mce-EMAIL" aria-label="Email para subscripcion de newsletter">
-                                    <div class="md-errors-spacer"></div>
-                                </md-input-container>
-                            </div>
-                            <br>
-                            <div class="mc-field-group">
-                                <label for="mce-FNAME">Nombre </label>
-                                <md-input-container class="md-block">
-                                    <input type="text" value="" name="FNAME" class="md-input" id="mce-FNAME"
-                                        aria-label="Nombre para subscripcion de newsletter">
-                                    <div class="md-errors-spacer"></div>
-                                </md-input-container>
-                            </div>
-                            <br>
-                            <div class="mc-field-group">
-                                <label for="mce-LNAME">Apellido </label>
-                                <md-input-container class="md-block">
-                                    <input type="text" value="" name="LNAME" class="md-input" id="mce-LNAME"
-                                        aria-label="Apellido para subscripcion de newsletter">
-                                    <div class="md-errors-spacer"></div>
-                                </md-input-container>
-                            </div>
-                            <br>
-                            <div class="mc-field-group size1of2">
-                                <label for="mce-MMERGE3-month">Cumpleaños </label>
-                                <div class="datefield">
-                                    <span class="subfield dayfield"><input class="birthday " type="text"
-                                            pattern="[0-9]*" value="" placeholder="DD" size="2" maxlength="2"
-                                            name="MMERGE3[day]" id="mce-MMERGE3-day"></span> /
-                                    <span class="subfield monthfield"><input class="birthday " type="text"
-                                            pattern="[0-9]*" value="" placeholder="MM" size="2" maxlength="2"
-                                            name="MMERGE3[month]" id="mce-MMERGE3-month"></span>
-                                    <span class="small-meta nowrap">( dd / mm )</span>
-                                </div>
-                                <br>
-                            </div>
-                            <div id="mce-responses" class="clear">
-                                <div class="response" id="mce-error-response" style="display:none"></div>
-                                <div class="response" id="mce-success-response" style="display:none"></div>
-                            </div>
-                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
-                                    name="b_6e367e515cfec909f57abe5fd_ac4082f719" tabindex="-1" value=""></div>
-                            <md-input-container class="md-block">
-                                <button class="btn btn-info custom-btn">
-                                    <i class="fas fa-info-circle"></i> Más Información
-                                </button>
 
-                            </md-input-container>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
         </div>
     </div>
     <div class="row map-container" id="map-container">
