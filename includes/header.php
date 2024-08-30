@@ -5,20 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="./assets/img/favicon/site.webmanifest">
-    <link rel="mask-icon" href="./assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
     <title>Cine Milenium | Santa Rosa </title>
-    <!-- jQuery-->
+
+    <meta name="description"
+        content="Disfruta de las mejores películas en Cine Milenium Santa Rosa. Cartelera actualizada, promociones y más.">
+    <meta name="keywords" content="cine, peliculas, santa rosa, cartelera">
+    <meta name="author" content="Cine Milenium">
+
     <script src="./vendor/jQuery/jquery.min.js"></script>
     <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css">
-    <!--estilos v?=1 -->
     <link rel="stylesheet" href="./assets/css/styles.css?v=2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
 </head>
 
 <body id="top">

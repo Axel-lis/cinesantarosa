@@ -1,23 +1,23 @@
-/* Open Sans Variable Font (Normal and Italic) */
+/* Lufga Variable Font (Normal and Italic) */
 
 /* Regular and Bold (weights 100 to 900) */
 @font-face {
-  font-family: 'Open Sans';
-  src: url('../fonts/OpenSans-VariableFont_wdth_wght.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: normal;
-}
-
-/* Italic (weights 100 to 900) */
-@font-face {
-  font-family: 'Open Sans';
-  src: url('../fonts/OpenSans-Italic-VariableFont_wdth.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: italic;
+  font-family: 'Lufga';
+  src: url('fonts/Lufga-Regular.otf') format('opentype'),
+       url('fonts/Lufga-Bold.otf') format('opentype'),
+       /* Agrega aquí el resto de los estilos de la fuente, como italic, etc. */
 }
 
 * {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lufga', sans-serif;
+}
+body {
+  font-family: 'Lufga', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Lufga', sans-serif;
+  font-weight: bold;
 }
 /* Estilo del navbar */
 .navbar {
@@ -142,7 +142,7 @@ body {
 }
 
 .custom-btn {
-  font-family: 'Open Sans', sans-serif;
+   font-family: 'Lufga', sans-serif;
   text-transform: uppercase;
   /* Texto en mayúsculas */
   letter-spacing: 1px;
@@ -158,7 +158,7 @@ body {
 
 .proceso-compra {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+ font-family: 'Lufga', sans-serif;
   font-weight: 700;
   font-style: italic;
   color: #fff;
@@ -179,7 +179,7 @@ body {
 
 .texto-producto {
   background-image: url('../img/fondo-ticket-compra.png');
-  font-family: 'Open Sans', sans-serif;
+ font-family: 'Lufga', sans-serif;
   font-weight: 700;
   font-style: bold;
   color: white;
