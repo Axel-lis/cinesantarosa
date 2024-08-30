@@ -3,7 +3,7 @@
 /* Regular and Bold (weights 100 to 900) */
 @font-face {
   font-family: 'Open Sans';
-  src: url('../fonts/OpenSans-VariableFont_wdth,wght.ttf') format('truetype');
+  src: url('../fonts/OpenSans-VariableFont_wdth_wght.ttf') format('truetype');
   font-weight: 100 900;
   font-style: normal;
 }
@@ -11,7 +11,7 @@
 /* Italic (weights 100 to 900) */
 @font-face {
   font-family: 'Open Sans';
-  src: url('../fonts/OpenSans-Italic-VariableFont_wght.ttf') format('truetype');
+  src: url('../fonts/OpenSans-Italic-VariableFont_wdth.ttf') format('truetype');
   font-weight: 100 900;
   font-style: italic;
 }
@@ -93,7 +93,7 @@ body {
 
 /*segunda seccion */
 .container-fluid.star-background {
-  background-image: url('./assets/img/fondo-estrellas.png');
+  background-image: url('../img/fondo-estrellas.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -282,6 +282,7 @@ body {
 .calendar-header p {
   font-size: 18px;
   font-weight: bold;
+  text-align:left;
 }
 
 .calendar-grid {
@@ -290,6 +291,7 @@ body {
   gap: 1px;
   margin-top: 10px;
 }
+
 .calendar-day.lunes,
 .calendar-day.martes,
 .calendar-day.miercoles,
@@ -355,7 +357,7 @@ body {
 
   /* Background para pantallas móviles */
   body {
-    background-image: url('./assets/img/fondo-mobile.png');
+    background-image: url('../img/fondo-mobile.png');
   }
 
   #navbarNav {
@@ -431,4 +433,9 @@ body {
   .banner-movil {
     display: none;
   }
+}
+.nuevaMovie {
+  margin-top:30px;
+  clear:both;
+  width:100%;
 }

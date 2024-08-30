@@ -21,30 +21,18 @@ include 'includes/header.php';
 
     <div class="row text-center text-white py-3 bg-dark">
         <div class="col-12">
-            <h2 class="fw-bold"><i class="fas fa-film"></i> ESTA SEMANA EN CINES <i class="fas fa-film"></i></h2>
+            <h2 class="fw-bold"> ESTA SEMANA EN CINES </h2>
         </div>
 
-        <div class="row justify-content-center pb-3">
-            <div class="col-3">
-                <!--imagenes dinámicas de las peliculas en cartelera-->
-                <img src="./assets/img/ejemplo-movie.png" alt="Movie 1" class="img-fluid movie-poster">
-            </div>
-            <div class="col-3">
-                <img src="./assets/img/ejemplo-movie.png" alt="Movie 2" class="img-fluid movie-poster">
-            </div>
-            <div class="col-3">
-                <img src="./assets/img/ejemplo-movie.png" alt="Movie 3" class="img-fluid movie-poster">
-            </div>
-            <div class="col-3">
-                <img src="./assets/img/ejemplo-movie.png" alt="Movie 4" class="img-fluid movie-poster">
-            </div>
+        <div class="row justify-content-center pb-3" id="peliculasTitulos">
         </div>
     </div>
 </div>
 <!--segunda sección-->
 <div class="container-fluid star-background">
     <div class="row text-white">
-        <div class="col-md-9">
+        <div class="col-md-1" id="aire"></div>
+        <div class="col-md-7" id="schedules">
             <div class="schedule-section mt-5">
                 <div class="row">
                     <div class="col-md-3">
@@ -285,7 +273,7 @@ include 'includes/header.php';
                 </div>
             </div>
         </div>
-        <div class="col-md-3 sidebar">
+        <div class="col-md-3 sidebar mt-5">
             <img src="./assets/img/promos.png" alt="Imagen 1" class="img-fluid">
             <div class="mt-5 col-sm-6 col-md-6 col-lg-12 float-left">
                 <div class="container newsletter">
