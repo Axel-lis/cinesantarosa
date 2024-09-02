@@ -3,8 +3,8 @@
 /* Regular and Bold (weights 100 to 900) */
 @font-face {
   font-family: 'Lufga';
-  src: url('fonts/Lufga-Regular.otf') format('opentype'),
-       url('fonts/Lufga-Bold.otf') format('opentype'),
+  src: url('./fonts/Lufga-Regular.otf') format('opentype'),
+       url('./fonts/Lufga-Bold.otf') format('opentype'),
        /* Agrega aquí el resto de los estilos de la fuente, como italic, etc. */
 }
 

@@ -86,7 +86,6 @@ function renderSemanas(codigopelicula, semanas) {
   const diasem = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
 
   for (const [id, semana] of Object.entries(semanas)) {
-    //console.log(`Procesando ${semana.nombresemana}`);
     $('<div class="calendar-header"><p>SEMANA DEL ' + semana.nombresemana + '</p></div>').appendTo(
       '#calendar' + codigopelicula,
     );
@@ -94,7 +93,7 @@ function renderSemanas(codigopelicula, semanas) {
 
     // Acceder a la grilla
     const grillaData = semana.grilla[Object.keys(semana.grilla)[0]];
-    //console.log('Datos de la grilla:', grillaData);
+    console.log('Datos de la grilla:', grillaData);
 
     for (let i = 0; i < diasem.length; i++) {
       let diaData = grillaData[i];
@@ -103,66 +102,72 @@ function renderSemanas(codigopelicula, semanas) {
       // Extraer el título del día del objeto
       let tituloMostrar = diaTitulo.titulo || diasem[i].charAt(0).toUpperCase() + diasem[i].slice(1);
 
-      // Verificar si hay más de una función para el día
-      if (diaData && diaData.length > 1) {
-        // Si hay más de una función, agregar una fila por cada función
+      let grupo = $('<div class="day-group"></div>').appendTo(grilla);
+      $(`<div class="calendar-day ${diasem[i]}">${tituloMostrar}</div>`).appendTo(grupo);
+
+      // Verificar si hay funciones para el día
+      if (diaData && Array.isArray(diaData) && diaData.length > 0) {
         diaData.forEach((funcion) => {
-          let grupo = $('<div class="day-group"></div>').appendTo(grilla);
-          $(`<div class="calendar-day ${diasem[i]}">${tituloMostrar}</div>`).appendTo(grupo);
+          if (funcion.agotadas) {
+            // Si las entradas están agotadas
+            $('<div class="calendar-cell empty-cell">Entradas agotadas</div>').appendTo(grupo);
+          } else {
+            // Crear un array con las etiquetas disponibles
+            let etiquetas = [];
+            if (funcion.shico1) etiquetas.push(funcion.shico1.toLowerCase());
+            if (funcion.shico2) etiquetas.push(funcion.shico2.toLowerCase());
 
-          // Crear un array con las etiquetas disponibles
-          let etiquetas = [];
-          if (funcion.shico1) etiquetas.push(funcion.shico1.toLowerCase());
-          if (funcion.shico2) etiquetas.push(funcion.shico2.toLowerCase());
-
-          let celda = $(`
-            <div class="calendar-cell funcion">
-              <div class="flex">
-                <span>${funcion.txtime || 'Horario no disponible'}</span> <br>
-                ${etiquetas
-                  .map(
-                    (etiqueta) =>
-                      `<img src="./assets/img/etiquetas/etiqueta-${etiqueta}.png" class="etiquetas" alt="${etiqueta}">`,
-                  )
-                  .join('')}
+            let celda = $(`
+              <div class="calendar-cell funcion">
+                <div class="flex">
+                  <span>${funcion.txtime || 'Horario no disponible'}</span> <br>
+                  ${etiquetas
+                    .map(
+                      (etiqueta) =>
+                        `<img src="./assets/img/etiquetas/etiqueta-${etiqueta}.png" class="etiquetas" alt="${etiqueta}">`,
+                    )
+                    .join('')}
+                </div>
               </div>
-            </div>
-          `).appendTo(grupo);
+            `).appendTo(grupo);
 
-          celda.click(function () {
-            window.location.href = './compra.php';
-          });
+            celda.click(function () {
+              window.location.href = './compra.php';
+            });
+          }
         });
       } else {
-        // Si no hay más de una función, o no hay función, se procesa normalmente
-        let grupo = $('<div class="day-group"></div>').appendTo(grilla);
-        $(`<div class="calendar-day ${diasem[i]}">${tituloMostrar}</div>`).appendTo(grupo);
-
+        // Si no hay funciones para el día o es un solo objeto
         if (diaData && !diaData.empty) {
-          // Crear un array con las etiquetas disponibles
-          let etiquetas = [];
-          if (diaData.shico1) etiquetas.push(diaData.shico1.toLowerCase());
-          if (diaData.shico2) etiquetas.push(diaData.shico2.toLowerCase());
+          if (diaData.agotadas) {
+            // Si las entradas están agotadas
+            $('<div class="calendar-cell empty-cell">Entradas agotadas</div>').appendTo(grupo);
+          } else {
+            // Crear un array con las etiquetas disponibles
+            let etiquetas = [];
+            if (diaData.shico1) etiquetas.push(diaData.shico1.toLowerCase());
+            if (diaData.shico2) etiquetas.push(diaData.shico2.toLowerCase());
 
-          let celda = $(`
-            <div class="calendar-cell funcion">
-              <div class="flex">
-                <span>${diaData.txtime || 'Horario no disponible'}</span> <br>
-                ${etiquetas
-                  .map(
-                    (etiqueta) =>
-                      `<img src="./assets/img/etiquetas/etiqueta-${etiqueta}.png" class="etiquetas" alt="${etiqueta}">`,
-                  )
-                  .join('')}
+            let celda = $(`
+              <div class="calendar-cell funcion">
+                <div class="flex">
+                  <span>${diaData.txtime || 'Horario no disponible'}</span> <br>
+                  ${etiquetas
+                    .map(
+                      (etiqueta) =>
+                        `<img src="./assets/img/etiquetas/etiqueta-${etiqueta}.png" class="etiquetas" alt="${etiqueta}">`,
+                    )
+                    .join('')}
+                </div>
               </div>
-            </div>
-          `).appendTo(grupo);
+            `).appendTo(grupo);
 
-          celda.click(function () {
-            window.location.href = './compra.php';
-          });
+            celda.click(function () {
+              window.location.href = './compra.php';
+            });
+          }
         } else {
-          //console.log('No hay función para', diasem[i]);
+          // Si no hay datos o es un día vacío
           $('<div class="empty-cell"></div>').appendTo(grupo);
         }
       }
