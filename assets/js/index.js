@@ -63,13 +63,13 @@ function renderPeliculas() {
 	<div class="nuevaMovie" id="{mvtitle}"></div>
 	<div class="schedule-section mt-5" >
 		<div class="row">
-			<div class="col-11"><h2>{mvtitle}</h2></div>
+			<div class="col-11 py-4"><h2>{mvtitle}</h2></div>
 			<div class="col-1"><img src="https://www.cinesantarosa.com.ar/assets/img/categorias/{mvcat1}" class="img-fluid"></div>
 			<div class="col-md-3">
 					<img src="https://www.cinesantarosa.com.ar/assets/img/peliculas/{mvimg}" alt="{mvtitle}">
 			</div>
 			<div class="col-md-9 iframe-container">
-				<iframe style="width:100%; height:100%;"
+				<iframe style="width:100%; height:100%; min-height: 250px;"
 						ng-src="https://www.youtube-nocookie.com/embed/{mvtube}" frameborder="0"
 						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 						allowfullscreen="" src="https://www.youtube-nocookie.com/embed/{mvtube}"></iframe>
@@ -86,7 +86,7 @@ function renderSemanas(codigopelicula, semanas) {
   const diasem = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
 
   for (const [id, semana] of Object.entries(semanas)) {
-    $('<div class="calendar-header"><p>SEMANA DEL ' + semana.nombresemana + '</p></div>').appendTo(
+    $('<div class="calendar-header"><p class="py-2">SEMANA DEL ' + semana.nombresemana + '</p></div>').appendTo(
       '#calendar' + codigopelicula,
     );
     const grilla = $('<div class="calendar-grid"></div>').appendTo('#calendar' + codigopelicula);
