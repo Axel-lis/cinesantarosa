@@ -106,9 +106,11 @@ body {
 }
 
 .schedule-section img {
-  height: 100%;
+  width: 100%;
 }
-
+.schedule-section .img-cartelera{
+  min-height: 250px;
+}
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -329,9 +331,10 @@ body {
 .calendar-day.domingo {
   background-image: url('../img/calendar-day.png');
   background-size: contain;
+  font-size: 12px;
 }
 .calendar-day {
-  padding: 6.4px 6px;
+  padding: 2px;
   background-image: url('../img/calendar-day.png');
   background-size: contain;
 }

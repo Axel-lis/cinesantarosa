@@ -129,10 +129,10 @@ include 'includes/header.php';
 
             <div class="schedule-section mt-5">
                 <div class="row" style="display: flex;">
-                    <div class="col-md-3" style="display: flex; align-items: center; min-height: 250px;">
+                    <div class="col-md-4" style="display: flex; align-items: center; min-height: 250px;">
                         <img src="./assets/img/ejemplo-movie.png" alt="Imagen 5" style="max-width: 100%; height: auto;">
                     </div>
-                    <div class="col-md-9 iframe-container"
+                    <div class="col-md-8 iframe-container"
                         style="display: flex; align-items: stretch; min-height: 250px;">
                         <iframe style="width: 100%; height: 100%; min-height: 250px;"
                             ng-src="https://www.youtube-nocookie.com/embed/nflDk6KmDpM" frameborder="0"
