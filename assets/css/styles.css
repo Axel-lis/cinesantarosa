@@ -409,7 +409,7 @@ body {
 */
 .calendar-cell {
   cursor: pointer;
-  background-image: url('../img/calendar-cell.png');
+  background-image: url('../img/calendar-cell1.png');
   background-size: cover;
   background-repeat: round;
   display: flex;
@@ -455,6 +455,14 @@ body {
 }
 .schedule-section img.etiquetas{
  width: 35px ;
+}
+.cantidad-entradas-container{
+  background-color: #f8f9fa;
+
+}
+.datos-personales-container{
+    background-color: #f8f9fa;
+      margin-left: 50px;
 }
 @media (max-width: 768px) {
   .navbar-brand {
