@@ -331,7 +331,7 @@ body {
   background-size: contain;
 }
 .calendar-day {
-  padding: 6px 10px;
+  padding: 6.4px 6px;
   background-image: url('../img/calendar-day.png');
   background-size: contain;
 }
