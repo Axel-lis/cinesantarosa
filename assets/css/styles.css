@@ -125,11 +125,10 @@ body {
 .schedule-section .custom-row {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: -140px;
 }
 
 .schedule-section .img-cartelera {
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
     height: 100%;
     max-height:250px; /* Ajustable según preferencia */
@@ -137,7 +136,7 @@ body {
 
 .schedule-section .iframe-container {
     position: relative;
-    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    padding-bottom: 35%; /* Relación de aspecto 16:9 */  
     height: 0;
 }
 
@@ -208,6 +207,10 @@ body {
   padding: 20px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0;
+  -ms-border-radius: 10px 10px 0 0;
+  -o-border-radius: 10px 10px 0 0;
 }
 
 .texto-producto {
@@ -359,15 +362,30 @@ body {
 .calendar-day.viernes,
 .calendar-day.sabado,
 .calendar-day.domingo {
-  background-image: url('../img/calendar-day.png');
-  background-size: contain;
-  font-size: 12px;
+  background-image: url('../img/calendar---day.png');
+    background-size: cover;
+    font-size: 14px;
+    background-repeat: round;
+    text-transform: uppercase;
+    padding: 3px;
+    font-family: 'Lufga';
 }
+/*
 .calendar-day {
-  padding: 2px;
-  background-image: url('../img/calendar-day.png');
-  background-size: contain;
-}
+    padding: 10px;
+  color: white;
+  text-align: center;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(
+    10% 0%, 90% 0%, 
+    100% 10%, 100% 90%, 
+    90% 100%, 10% 100%,
+    0% 90%, 0% 10% 
+  );
+} 
 
 .calendar-cell {
   padding: 10px;
@@ -380,17 +398,37 @@ body {
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease-in-out;
-  cursor:pointer;
+  cursor: pointer;
+  clip-path: polygon(
+    10% 0%, 90% 0%, 
+    100% 10%, 100% 90%, 
+    90% 100%, 10% 100%, 
+    0% 90%, 0% 10% 
+  );
 }
-.calendar-cell:hover{
-  background-color: #F8B01D;
+*/
+.calendar-cell {
+  cursor: pointer;
+  background-image: url('../img/calendar-cell.png');
+  background-size: cover;
+  background-repeat: round;
+  display: flex;
+  align-items: center;
+  justify-content: center ;
+  font-size: 15px;
+  height: 100px;
 }
+.calendar-cell:hover {
+  filter: brightness(0.8);
+}
+
 .calendar-cell.filled {
   background-color: #1e90ff;
 }
+/*
 .empty-cell{
     padding: 10px;
-  background-color: #3b3f4b;
+  background-color: #808080;
   color: white;
   text-align: center;
   border: 1px solid #252833;
@@ -398,7 +436,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor:default;
+  transition: background-color 0.3s ease-in-out;
+  cursor: default;
+  clip-path: polygon(
+    10% 0%, 90% 0%, 
+    100% 10%, 100% 90%, 
+    90% 100%, 10% 100%, 
+    0% 90%, 0% 10% 
+  );
+}
+*/
+.empty-cell{
+  background-image: url('../img/empty-cell.png');
+  background-size: cover;
+  font-size: 15px;
+  background-repeat: round;
+  height: 100px;
 }
 .schedule-section img.etiquetas{
  width: 35px ;
@@ -449,16 +502,19 @@ body {
   /* Asegura que cada día tenga su propia fila */
   .calendar-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Una columna */
-    gap: 0; /* Sin espacio entre las filas */
+    grid-template-columns: 1fr; 
+    gap: 2; 
   }
 
   .calendar-day {
-    text-align: center;
-    font-weight: bold;
-    border: none;
-    border-top: 1px solid #252833; /* Añade borde superior */
-    border-bottom: 1px solid #252833; /* Añade borde inferior */
+  background-image: url('../img/calendar-day-mobile.png') !important; 
+  background-size: cover;
+  font-size: 15px;
+  background-repeat: round;
+  text-transform: uppercase;
+  padding: 2px;
+  font-family: 'Lufga';
+   margin-bottom: 1px;
   }
 
   .calendar-day.lunes {
@@ -468,19 +524,26 @@ body {
   .calendar-day.domingo {
     border-top-right-radius: 0;
   }
-
+.empty-cell{
+  background-image: url('../img/empty-cell-mobile.png') !important;
+  background-size: cover;
+  font-size: 15px;
+  background-repeat: round;
+  height: 100px;
+}
   .calendar-cell {
-    width: 100%; /* Cada celda ocupa el 100% del ancho */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: none;
-    border-bottom: 1px solid #252833; /* Añade borde inferior */
+  background-image: url('../img/calendar-cell-mobile.png') !important;
+  background-size: cover;
+  font-size: 15px;
+  background-repeat: round;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
   }
 .schedule-section img {
   width: 280px;
-  margin-left: 10%;
 }
   /* Ajusta el tamaño de las imágenes de las etiquetas en móvil */
   .schedule-section img.etiquetas {
