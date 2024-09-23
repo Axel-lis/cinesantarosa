@@ -214,29 +214,29 @@ include 'includes/header.php';
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-3 sidebar mt-5">
-        <img src="./assets/img/promos.png" alt="Imagen 1" class="img-fluid">
-        <div class="mt-5 col-sm-6 col-md-6 col-lg-12 float-left">
-            <div class="container newsletter">
-                <a href="./assets/contratos/contrato-menores.pdf" target="_blank" style="color:white;">DESCARGUE EL
-                    FORMULARIO<br> MENORES RES. 2890</a>
-            </div>
-        </div>
 
+        <div class="col-md-3 sidebar mt-5">
+            <img src="./assets/img/promos.png" alt="Imagen 1" class="img-fluid">
+            <div class="mt-5 col-sm-6 col-md-6 col-lg-12 float-left">
+                <div class="container newsletter">
+                    <a href="./assets/contratos/contrato-menores.pdf" target="_blank" style="color:white;">DESCARGUE EL
+                        FORMULARIO<br> MENORES RES. 2890</a>
+                </div>
+            </div>
+
+        </div>
     </div>
-</div>
-<div class="row map-container" id="map-container">
-    <div class="col-12">
-        <h2 class="fw-bold text-white bg-dark w-100 p-3">
-            ¡NOS VEMOS EN EL CINE!
-        </h2>
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3202.140545203498!2d-64.29724732441785!3d-36.62300346692783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95c2cd0689920f4f%3A0xb4c0bd2ec262ec5f!2sCine%20Milenium!5e0!3m2!1ses-419!2sar!4v1724192095357!5m2!1ses-419!2sar"
-            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="row map-container" id="map-container">
+        <div class="col-12">
+            <h2 class="fw-bold text-white bg-dark w-100 p-3">
+                ¡NOS VEMOS EN EL CINE!
+            </h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3202.140545203498!2d-64.29724732441785!3d-36.62300346692783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95c2cd0689920f4f%3A0xb4c0bd2ec262ec5f!2sCine%20Milenium!5e0!3m2!1ses-419!2sar!4v1724192095357!5m2!1ses-419!2sar"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
     </div>
-</div>
 
 </div>
 
