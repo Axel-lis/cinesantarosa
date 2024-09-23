@@ -60,25 +60,26 @@ function renderTitulos() {
 
 function renderPeliculas() {
   const unaPeli = `
-	<div class="nuevaMovie" id="{mvtitle}"></div>
-	<div class="schedule-section mt-5" >
-		<div class="row">
-			<div class="col-11 py-4"><h2>{mvtitle}</h2></div>
-			<div class="col-1"><img src="https://www.cinesantarosa.com.ar/assets/img/categorias/{mvcat1}" class="img-fluid"></div>
-			<div class="col-md-4">
-					<img src="https://www.cinesantarosa.com.ar/assets/img/peliculas/{mvimg}" alt="{mvtitle} class="img-cartelera">
+	<div class="nuevaMovie" id="{mvtitle}">
+		<div class="schedule-section mt-5" >
+			<div class="custom-row row">
+				<div class="col-11 py-4"><h2>{mvtitle}</h2></div>
+				<div class="col-1"><img src="https://www.cinesantarosa.com.ar/assets/img/categorias/{mvcat1}" class="img-fluid"></div>
+				<div class="col-md-4">
+					<img src="https://www.cinesantarosa.com.ar/assets/img/peliculas/{mvimg}" alt="{mvtitle}" class="img-cartelera">
+				</div>
+				<div class="col-md-8 iframe-container">
+					<iframe style="width:100%; height:100%; max-height: 250px;"
+							ng-src="https://www.youtube-nocookie.com/embed/{mvtube}" frameborder="0"
+							allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen="" src="https://www.youtube-nocookie.com/embed/{mvtube}"></iframe>
+				</div>
 			</div>
-			<div class="col-md-8 iframe-container">
-				<iframe style="width:100%; height:100%; min-height: 250px;"
-						ng-src="https://www.youtube-nocookie.com/embed/{mvtube}" frameborder="0"
-						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-						allowfullscreen="" src="https://www.youtube-nocookie.com/embed/{mvtube}"></iframe>
+			<div class="calendar-container" id="calendar{mvtube}">
 			</div>
-		</div>
-		<div class="calendar-container" id="calendar{mvtube}">
 		</div>
 	</div>
-	`;
+  `;
   $('#schedules').html(peliculas().supplant(unaPeli));
 }
 
