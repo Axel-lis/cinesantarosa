@@ -325,10 +325,11 @@ body {
 }
 
 #peliculasTitulos .movie-poster {
-    width: 100%; 
-    height: auto; 
-    border-radius: 8px; 
-    max-height: 250px;
+    width: auto;
+    margin-top:1rem;
+    margin-right: 1rem;
+    margin-left:1rem;
+    height: 15rem;
 }
 
 #peliculasTitulos a {

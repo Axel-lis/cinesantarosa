@@ -18,9 +18,6 @@ $(document).ready(function () {
     getProducts();
   } else {
     getSemana();
-    $('.calendar-cell.funcion').click(function () {
-      window.location.href = './compra.php';
-    });
   }
 });
 
@@ -48,7 +45,6 @@ function getSemana() {
     },
   });
 }
-
 function renderTitulos() {
   const untitulo = `<div class="col-2">
 		<a href="#{mvtitle}">
@@ -92,87 +88,81 @@ function renderSemanas(codigopelicula, semanas) {
     );
     const grilla = $('<div class="calendar-grid"></div>').appendTo('#calendar' + codigopelicula);
 
-    // Acceder a la grilla
-    const grillaData = semana.grilla[Object.keys(semana.grilla)[0]];
-    console.log('Datos de la grilla:', grillaData);
+    // Objeto para rastrear los días ya renderizados
+    let diasRenderizados = {};
 
-    for (let i = 0; i < diasem.length; i++) {
-      let diaData = grillaData[i];
-      let diaTitulo = semana.titulos[i];
+    // Recorrer todas las propiedades de semana.grilla
+    for (const [clave, grillaData] of Object.entries(semana.grilla)) {
+      for (let i = 0; i < diasem.length; i++) {
+        let diaData = grillaData[i];
+        let diaTitulo = semana.titulos[i];
 
-      // Extraer el título del día del objeto
-      let tituloMostrar = diaTitulo.titulo || diasem[i].charAt(0).toUpperCase() + diasem[i].slice(1);
+        // Extraer el título del día
+        let tituloMostrar = diaTitulo.titulo || diasem[i].charAt(0).toUpperCase() + diasem[i].slice(1);
 
-      let grupo = $('<div class="day-group"></div>').appendTo(grilla);
-      $(`<div class="calendar-day ${diasem[i]}">${tituloMostrar}</div>`).appendTo(grupo);
-
-      // Verificar si hay funciones para el día
-      if (diaData && Array.isArray(diaData) && diaData.length > 0) {
-        diaData.forEach((funcion) => {
-          if (funcion.agotadas) {
-            // Si las entradas están agotadas
-            $('<div class="calendar-cell empty-cell">Entradas agotadas</div>').appendTo(grupo);
-          } else {
-            // Crear un array con las etiquetas disponibles
-            let etiquetas = [];
-            if (funcion.shico1) etiquetas.push(funcion.shico1.toLowerCase());
-            if (funcion.shico2) etiquetas.push(funcion.shico2.toLowerCase());
-
-            let celda = $(`
-              <div class="calendar-cell funcion">
-                <div class="flex">
-                  <span>${funcion.txtime || 'Horario no disponible'}</span> <br>
-                  ${etiquetas
-                    .map(
-                      (etiqueta) =>
-                        `<img src="./assets/img/etiquetas/etiqueta-${etiqueta}.png" class="etiquetas" alt="${etiqueta}">`,
-                    )
-                    .join('')}
-                </div>
-              </div>
-            `).appendTo(grupo);
-
-            celda.click(function () {
-              window.location.href = './compra.php';
-            });
-          }
-        });
-      } else {
-        // Si no hay funciones para el día o es un solo objeto
-        if (diaData && !diaData.empty) {
-          if (diaData.agotadas) {
-            // Si las entradas están agotadas
-            $('<div class="calendar-cell empty-cell">Entradas agotadas</div>').appendTo(grupo);
-          } else {
-            // Crear un array con las etiquetas disponibles
-            let etiquetas = [];
-            if (diaData.shico1) etiquetas.push(diaData.shico1.toLowerCase());
-            if (diaData.shico2) etiquetas.push(diaData.shico2.toLowerCase());
-
-            let celda = $(`
-              <div class="calendar-cell funcion">
-                <div class="flex">
-                  <span>${diaData.txtime || 'Horario no disponible'}</span> <br>
-                  ${etiquetas
-                    .map(
-                      (etiqueta) =>
-                        `<img src="./assets/img/etiquetas/etiqueta-${etiqueta}.png" class="etiquetas" alt="${etiqueta}">`,
-                    )
-                    .join('')}
-                </div>
-              </div>
-            `).appendTo(grupo);
-
-            celda.click(function () {
-              window.location.href = './compra.php';
-            });
-          }
+        // Verificar si el día ya ha sido renderizado
+        if (!diasRenderizados[diasem[i]]) {
+          // Si no ha sido renderizado, lo añadimos y mostramos el título
+          diasRenderizados[diasem[i]] = true;
         } else {
-          // Si no hay datos o es un día vacío
-          $('<div class="empty-cell"></div>').appendTo(grupo);
+          // Si ya ha sido renderizado, dejar el título vacío
+          tituloMostrar = '';
+        }
+
+        let grupo = $('<div class="day-group"></div>').appendTo(grilla);
+        let diaElemento = $(`<div class="calendar-day ${diasem[i]}">${tituloMostrar}</div>`);
+        grupo.append(diaElemento);
+
+        // Crear un contenedor para las funciones del día
+        let funcionesDia = $('<div class="funciones-dia"></div>').appendTo(grupo);
+
+        // Verificar si hay funciones para el día
+        if (diaData && Array.isArray(diaData)) {
+          // Aquí iteramos sobre cada función del día
+          diaData.forEach((funcion) => {
+            renderFuncion(funcion, funcionesDia);
+          });
+        } else if (diaData && !diaData.empty) {
+          // Si es un solo objeto (no array), renderizar la única función del día
+          renderFuncion(diaData, funcionesDia);
+        } else {
+          // Día vacío
+          $('<div class="empty-cell"></div>').appendTo(funcionesDia);
         }
       }
     }
+  }
+}
+
+function renderFuncion(funcion, grupo) {
+  let idPelicula = funcion.shid;
+  if (funcion.agotadas) {
+    // Entradas agotadas
+    $('<div class="calendar-cell empty-cell">Entradas agotadas</div>').appendTo(grupo);
+  } else {
+    // Crear array con las etiquetas
+    let etiquetas = [];
+    if (funcion.shico1) etiquetas.push(funcion.shico1.toLowerCase());
+    if (funcion.shico2) etiquetas.push(funcion.shico2.toLowerCase());
+
+    let celda = $(`
+      <div class="calendar-cell funcion" data-id="${idPelicula}">
+        <div class="flex">
+          <span>${funcion.txtime || 'Horario no disponible'}</span><br>
+          ${etiquetas
+            .map(
+              (etiqueta) =>
+                `<img src="./assets/img/etiquetas/etiqueta-${etiqueta}.png" class="etiquetas" alt="${etiqueta}">`,
+            )
+            .join('')}
+        </div>
+      </div>
+    `).appendTo(grupo);
+
+    // Evento click para redireccionar
+    celda.click(function () {
+      window.location.href = './compra.php?id=' + idPelicula;
+    });
   }
 }
 
@@ -200,7 +190,7 @@ function getProducts() {
 														<div class="producto">
 																<img src="${imgUrl}" alt="${combo.detalle}" class="img-fluid">
 														</div>
-														<p class="texto-producto">${combo.observacion}</p>
+														
 														<button class="buttonAgregar" data-id="${combo.id}">Agregar</button>
 												</div>
 										`;
