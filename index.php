@@ -19,8 +19,8 @@ include 'includes/header.php';
         </div>
     </div>
 
-    <div class="row text-center text-white py-3 bg-dark">
-        <div class="col-12">
+    <div class="row justify-content-center text-white py-3 bg-dark ml-auto mr-auto text-center d-flex">
+        <div class="col-12 text-center">
             <h2 class="fw-bold"> ESTA SEMANA EN CINES </h2>
         </div>
 

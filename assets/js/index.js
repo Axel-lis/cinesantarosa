@@ -46,7 +46,7 @@ function getSemana() {
   });
 }
 function renderTitulos() {
-  const untitulo = `<div class="col-2">
+  const untitulo = `<div class="col-sm-6 col-md-4 col-lg-2 mb-3">
 		<a href="#{mvtitle}">
 			<img src="https://www.cinesantarosa.com.ar/assets/img/peliculas/{mvimg}" class="img-fluid movie-poster" alt="{mvtitle}">
 		</a>
@@ -78,8 +78,62 @@ function renderPeliculas() {
   `;
   $('#schedules').html(peliculas().supplant(unaPeli));
 }
-
+// Función para decidir qué versión de renderSemanas utilizar
 function renderSemanas(codigopelicula, semanas) {
+  if (window.matchMedia('(min-width: 768px)').matches) {
+    // Pantallas de escritorio
+    renderSemanasDesktop(codigopelicula, semanas);
+  } else {
+    // Móviles y tabletas
+    renderSemanasMobile(codigopelicula, semanas);
+  }
+}
+function renderSemanasMobile(codigopelicula, semanas) {
+  const diasem = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
+
+  for (const [id, semana] of Object.entries(semanas)) {
+    // Encabezado de la semana
+    $('<div class="calendar-header"><p class="py-2">SEMANA DEL ' + semana.nombresemana + '</p></div>').appendTo(
+      '#calendar' + codigopelicula,
+    );
+
+    const grilla = $('<div class="calendar-grid"></div>').appendTo('#calendar' + codigopelicula);
+
+    // Objeto para rastrear las funciones por día
+    const funcionesPorDia = {};
+
+    // Llenamos el objeto funcionesPorDia
+    for (const [clave, grillaData] of Object.entries(semana.grilla)) {
+      for (let i = 0; i < diasem.length; i++) {
+        let diaData = grillaData[i];
+        if (diaData && Array.isArray(diaData)) {
+          funcionesPorDia[diasem[i]] = funcionesPorDia[diasem[i]] || []; // Inicializa el array si no existe
+          funcionesPorDia[diasem[i]].push(...diaData); // Agrega todas las funciones al array
+        } else if (diaData && !diaData.empty) {
+          funcionesPorDia[diasem[i]] = funcionesPorDia[diasem[i]] || [];
+          funcionesPorDia[diasem[i]].push(diaData); // Agrega el objeto si es solo uno
+        }
+      }
+    }
+
+    // Renderizar los días con funciones
+    for (const dia of diasem) {
+      let grupo = $('<div class="day-group"></div>').appendTo(grilla);
+      let diaElemento = $(`<div class="calendar-day ${dia}"></div>`).text(dia.charAt(0).toUpperCase() + dia.slice(1)); // Título del día
+      grupo.append(diaElemento);
+
+      let funcionesDia = $('<div class="funciones-dia"></div>');
+      grupo.append(funcionesDia);
+
+      if (funcionesPorDia[dia]) {
+        funcionesPorDia[dia].forEach((funcion) => renderFuncion(funcion, funcionesDia));
+      } else {
+        $('<div class="empty-cell"></div>').appendTo(funcionesDia); // Día vacío
+      }
+    }
+  }
+}
+function renderSemanasDesktop(codigopelicula, semanas) {
   const diasem = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
 
   for (const [id, semana] of Object.entries(semanas)) {
@@ -88,24 +142,17 @@ function renderSemanas(codigopelicula, semanas) {
     );
     const grilla = $('<div class="calendar-grid"></div>').appendTo('#calendar' + codigopelicula);
 
-    // Objeto para rastrear los días ya renderizados
     let diasRenderizados = {};
 
-    // Recorrer todas las propiedades de semana.grilla
     for (const [clave, grillaData] of Object.entries(semana.grilla)) {
       for (let i = 0; i < diasem.length; i++) {
         let diaData = grillaData[i];
         let diaTitulo = semana.titulos[i];
-
-        // Extraer el título del día
         let tituloMostrar = diaTitulo.titulo || diasem[i].charAt(0).toUpperCase() + diasem[i].slice(1);
 
-        // Verificar si el día ya ha sido renderizado
         if (!diasRenderizados[diasem[i]]) {
-          // Si no ha sido renderizado, lo añadimos y mostramos el título
           diasRenderizados[diasem[i]] = true;
         } else {
-          // Si ya ha sido renderizado, dejar el título vacío
           tituloMostrar = '';
         }
 
@@ -113,27 +160,21 @@ function renderSemanas(codigopelicula, semanas) {
         let diaElemento = $(`<div class="calendar-day ${diasem[i]}">${tituloMostrar}</div>`);
         grupo.append(diaElemento);
 
-        // Crear un contenedor para las funciones del día
         let funcionesDia = $('<div class="funciones-dia"></div>').appendTo(grupo);
 
-        // Verificar si hay funciones para el día
         if (diaData && Array.isArray(diaData)) {
-          // Aquí iteramos sobre cada función del día
           diaData.forEach((funcion) => {
             renderFuncion(funcion, funcionesDia);
           });
         } else if (diaData && !diaData.empty) {
-          // Si es un solo objeto (no array), renderizar la única función del día
           renderFuncion(diaData, funcionesDia);
         } else {
-          // Día vacío
           $('<div class="empty-cell"></div>').appendTo(funcionesDia);
         }
       }
     }
   }
 }
-
 function renderFuncion(funcion, grupo) {
   let idPelicula = funcion.shid;
   if (funcion.agotadas) {
@@ -158,7 +199,7 @@ function renderFuncion(funcion, grupo) {
         </div>
       </div>
     `).appendTo(grupo);
-
+    console.log(funcion);
     // Evento click para redireccionar
     celda.click(function () {
       window.location.href = './compra.php?id=' + idPelicula;

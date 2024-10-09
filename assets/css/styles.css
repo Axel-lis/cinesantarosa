@@ -3,8 +3,8 @@
 /* Regular and Bold (weights 100 to 900) */
 @font-face {
   font-family: 'Lufga';
-  src: url('./fonts/Lufga-Regular.otf') format('opentype'),
-       url('./fonts/Lufga-Bold.otf') format('opentype'),
+  src: url('/assets/fonts/font/Lufga-Regular.otf') format('opentype'),
+       url('/assets/fonts/font/Lufga-Bold.otf') format('opentype'),
        /* Agrega aquí el resto de los estilos de la fuente, como italic, etc. */
 }
 
@@ -313,15 +313,15 @@ body {
 #peliculasTitulos {
     display: flex; 
     flex-wrap: wrap; 
-    justify-content: center; 
-    gap: 10px; 
-    padding-bottom: 20px; /
+    justify-content: center !important; 
+    gap: 1px; 
+    padding-bottom: 20px; 
 }
 
 #peliculasTitulos .col-2 {
     flex: 0 0 auto; 
-    max-width: 14%; 
     padding: 0; 
+    width: fit-content;
 }
 
 #peliculasTitulos .movie-poster {
@@ -540,6 +540,9 @@ body {
   background-repeat: round;
   height: 100px;
 }
+.calendar-cell.funcion{
+  margin-top: 5px;
+}
   .calendar-cell {
   background-image: url('../img/calendar-cell-mobile.png') !important;
   background-size: cover;
@@ -554,10 +557,17 @@ body {
 .schedule-section img {
   width: 280px;
 }
-  /* Ajusta el tamaño de las imágenes de las etiquetas en móvil */
   .schedule-section img.etiquetas {
     width: 25px;
   }
+#peliculasTitulos .movie-poster{
+  width: auto;
+  margin-top:1rem;
+  margin-right: 8px;
+  height: 8rem;
+
+}
+
 }
 
 /* Ajuste del banner de escritorio en pantallas grandes */
@@ -565,7 +575,6 @@ body {
   .banner-web {
     display: block;
     width: 100%;
-    /* Asegura que el banner web se ajuste al ancho de la pantalla */
   }
 
   .banner-movil {
