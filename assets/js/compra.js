@@ -1,26 +1,58 @@
+var combosSeleccionados = [];
+var entradasSeleccionadas = 1; // Por defecto 1 entrada
+var precioEntrada = 0;
+
 $(document).ready(function () {
   getProducts();
+
+  // Escuchar cambios en el select de cantidad de entradas
+  $('#cantidadEntradas').on('change', function () {
+    let cantidad = parseInt($(this).val());
+    if (cantidad < 1) {
+      alert('La cantidad mínima de entradas debe ser 1.');
+      entradasSeleccionadas = 1;
+      $(this).val(1);
+    } else {
+      entradasSeleccionadas = cantidad;
+    }
+    actualizarTablaCompra();
+  });
 });
-// botones agregar
+
+// Botones agregar
 $(document).on('click', '.buttonAgregar', function () {
   var productoId = $(this).data('id');
-  // Lógica para manejar la selección del producto
-  alert('Producto ' + productoId + ' agregado al carrito!');
+  var productoDetalle = $(this).data('detalle');
+  var productoPrecio = $(this).data('precio');
+
+  // Verificar si el producto ya está en el array
+  var productoExistente = combosSeleccionados.find(function (combo) {
+    return combo.id === productoId;
+  });
+
+  if (productoExistente) {
+    alert('El producto ya está en el carrito.');
+  } else {
+    combosSeleccionados.push({ id: productoId, detalle: productoDetalle, precio: productoPrecio });
+    actualizarTablaCompra();
+    alert('Producto ' + productoId + ' agregado al carrito!');
+  }
 });
+
 // Obtener el valor del parámetro 'id' desde la URL
 function getMovieIdFromURL() {
   const params = new URLSearchParams(window.location.search);
-  return params.get('id'); // Devuelve el ID de la película o null si no existe
+  return params.get('id');
 }
 
 // Traer productos desde la API usando el ID de la película
 function getProducts() {
-  const idPelicula = getMovieIdFromURL(); // Extraer el ID desde la URL
-  console.log('ID de la película:', idPelicula); // Verificar si el ID se obtiene correctamente
+  const idPelicula = getMovieIdFromURL();
+  console.log('ID de la película:', idPelicula);
 
   if (!idPelicula) {
     console.error('ID de película no definido en la URL.');
-    return; // Evitar la llamada AJAX si no hay ID
+    return;
   }
 
   $.ajax({
@@ -28,29 +60,27 @@ function getProducts() {
     method: 'GET',
     success: function (response) {
       const data = response.show;
+      precioEntrada = parseFloat(data.precio);
 
       if (data && data.combos) {
-        $('#productos-container').empty(); // Limpiar el contenedor
+        $('#productos-container').empty();
 
         // Filtrar los combos activos
         const productosHabilitados = data.combos.filter((combo) => combo.cbactive === '1');
 
-        // Iterar sobre los combos y generar el HTML
         $.each(productosHabilitados, function (index, combo) {
           const imgUrl = `https://www.cinesantarosa.com.ar/assets/img/combos/${combo.id}/${
             combo.id
           }.png?v=${Math.random()}`;
-
           const productoHtml = `
-            <div class="col-6 col-md-3 p-3">
-              <div class="producto">
-                <img src="${imgUrl}" alt="${combo.id}" class="img-fluid">
-              </div>
-              <button class="buttonAgregar" data-id="${combo.id}">Agregar</button>
-            </div>
-          `;
+                        <div class="col-6 col-md-3 p-3">
+                            <div class="producto">
+                                <img src="${imgUrl}" alt="" class="img-fluid">
+                            </div>
+                            <button class="buttonAgregar" data-id="${combo.id}" data-detalle="${combo.detalle}" data-precio="${combo.precio}">Agregar</button>
+                        </div>
+                    `;
 
-          // Agregar el producto al contenedor
           $('#productos-container').append(productoHtml);
         });
       } else {
@@ -62,3 +92,49 @@ function getProducts() {
     },
   });
 }
+
+// Actualizar tabla de compra
+function actualizarTablaCompra() {
+  var tablaBody = $('tbody');
+  tablaBody.empty();
+
+  // Calcular el total de entradas
+  var totalEntradas = entradasSeleccionadas * precioEntrada;
+
+  var filaEntradas = $('<tr>');
+  filaEntradas.append($('<td>').text(entradasSeleccionadas + ' entrada(s)'));
+  filaEntradas.append($('<td>').text('$' + totalEntradas.toFixed(2)));
+  filaEntradas.append($('<td>').html('<button class="btn btn-danger btn-sm eliminar-entradas">Eliminar</button>'));
+  tablaBody.append(filaEntradas);
+
+  // Iterar sobre los combos seleccionados y agregar filas a la tabla
+  combosSeleccionados.forEach(function (combo) {
+    var filaCombo = $('<tr>');
+    filaCombo.append($('<td>').text(combo.detalle));
+    filaCombo.append($('<td>').text('$' + combo.precio));
+    filaCombo.append(
+      $('<td>').html(
+        '<button class="btn btn-danger btn-sm eliminar-combo" data-id="' + combo.id + '">Eliminar</button>',
+      ),
+    );
+    tablaBody.append(filaCombo);
+  });
+}
+
+// Botones de eliminar para tabla de compra
+$(document).on('click', '.eliminar-combo', function () {
+  var productoId = $(this).data('id');
+
+  // Eliminar el producto del array
+  combosSeleccionados = combosSeleccionados.filter(function (combo) {
+    return combo.id !== productoId;
+  });
+
+  actualizarTablaCompra();
+});
+
+$(document).on('click', '.eliminar-entradas', function () {
+  entradasSeleccionadas = 1; // Restablecer a 1 entrada por defecto
+  $('#cantidadEntradas').val(1);
+  actualizarTablaCompra();
+});

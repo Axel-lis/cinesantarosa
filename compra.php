@@ -82,25 +82,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Cargo por servicio</td>
-                        <td>$577.50</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>1 x Entrada de KUNG FU PANDA 4</td>
-                        <td>$1,900.00</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>1 x Lays Clásicas 46g</td>
-                        <td>$1,400.00</td>
-                        <td></td>
-                    </tr>
+                    <!-- detalle de compra -->
                 </tbody>
             </table>
             <div class="text-center w-100" style="background-color: #fff; padding: 10px; margin-top:-15px;">
-                <h4 class="text-secondary">TOTAL: $3.877,50</h4>
+                <h4 class="text-secondary"></h4>
                 <button class="btn btn-secondary">PREPARAR PAGO</button>
             </div>
         </div>
