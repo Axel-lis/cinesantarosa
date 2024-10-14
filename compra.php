@@ -106,4 +106,5 @@
         </div>
     </div>
 </main>
+<script src="./assets/js/compra.js?v=<?php echo time(); ?>"></script>
 <?php include __DIR__ . '/includes/footer.php'; ?>
