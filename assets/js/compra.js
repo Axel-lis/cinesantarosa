@@ -44,9 +44,7 @@ function getProducts() {
           const productoHtml = `
             <div class="col-6 col-md-3 p-3">
               <div class="producto">
-                <img src="${imgUrl}" alt="${combo.observacion}" class="img-fluid">
-                <p>${combo.detalle}</p>
-                <p><strong>Precio:</strong> $${parseFloat(combo.precio).toLocaleString('es-AR')}</p>
+                <img src="${imgUrl}" alt="${combo.id}" class="img-fluid">
               </div>
               <button class="buttonAgregar" data-id="${combo.id}">Agregar</button>
             </div>

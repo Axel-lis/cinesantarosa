@@ -199,7 +199,7 @@ body {
 .bg-morePurple {
   background-color: #1d1b3a !important;
 }
-.producto {
+.producto img{
   background-image: url('../img/COMPRA_Contenedor.png');
   background-size: cover;
   height: 300px;
