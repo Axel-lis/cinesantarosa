@@ -79,15 +79,26 @@ function renderPeliculas() {
   $('#schedules').html(peliculas().supplant(unaPeli));
 }
 // Función para decidir qué versión de renderSemanas utilizar
+let currentScreenSize = '';
+
 function renderSemanas(codigopelicula, semanas) {
-  if (window.matchMedia('(min-width: 768px)').matches) {
-    // Pantallas de escritorio
+  const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+
+  // Solo renderiza si ha habido un cambio en el tamaño de pantalla
+  if (isDesktop && currentScreenSize !== 'desktop') {
+    currentScreenSize = 'desktop';
     renderSemanasDesktop(codigopelicula, semanas);
-  } else {
-    // Móviles y tabletas
+  } else if (!isDesktop && currentScreenSize !== 'mobile') {
+    currentScreenSize = 'mobile';
     renderSemanasMobile(codigopelicula, semanas);
   }
 }
+
+// Añadir event listener para detectar cambios en el tamaño de la ventana
+window.addEventListener('resize', () => {
+  renderSemanas(codigopelicula, semanas);
+});
+
 function renderSemanasMobile(codigopelicula, semanas) {
   const diasem = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
 
@@ -158,7 +169,11 @@ function renderSemanasDesktop(codigopelicula, semanas) {
 
         let grupo = $('<div class="day-group"></div>').appendTo(grilla);
         let diaElemento = $(`<div class="calendar-day ${diasem[i]}">${tituloMostrar}</div>`);
-        grupo.append(diaElemento);
+
+        // Aquí verificamos si el título está vacío antes de agregarlo
+        if (tituloMostrar.trim() !== '') {
+          grupo.append(diaElemento); // Solo agrega el día si no está vacío
+        }
 
         let funcionesDia = $('<div class="funciones-dia"></div>').appendTo(grupo);
 
@@ -175,6 +190,7 @@ function renderSemanasDesktop(codigopelicula, semanas) {
     }
   }
 }
+
 function renderFuncion(funcion, grupo) {
   let idPelicula = funcion.shid;
   if (funcion.agotadas) {
