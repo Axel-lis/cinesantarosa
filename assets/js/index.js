@@ -79,26 +79,15 @@ function renderPeliculas() {
   $('#schedules').html(peliculas().supplant(unaPeli));
 }
 // Función para decidir qué versión de renderSemanas utilizar
-let currentScreenSize = '';
-
 function renderSemanas(codigopelicula, semanas) {
-  const isDesktop = window.matchMedia('(min-width: 768px)').matches;
-
-  // Solo renderiza si ha habido un cambio en el tamaño de pantalla
-  if (isDesktop && currentScreenSize !== 'desktop') {
-    currentScreenSize = 'desktop';
+  if (window.matchMedia('(min-width: 768px)').matches) {
+    // Pantallas de escritorio
     renderSemanasDesktop(codigopelicula, semanas);
-  } else if (!isDesktop && currentScreenSize !== 'mobile') {
-    currentScreenSize = 'mobile';
+  } else {
+    // Móviles y tabletas
     renderSemanasMobile(codigopelicula, semanas);
   }
 }
-
-// Añadir event listener para detectar cambios en el tamaño de la ventana
-window.addEventListener('resize', () => {
-  renderSemanas(codigopelicula, semanas);
-});
-
 function renderSemanasMobile(codigopelicula, semanas) {
   const diasem = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
 
