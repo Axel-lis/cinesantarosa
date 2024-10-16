@@ -103,22 +103,27 @@ function actualizarTablaCompra() {
 
   var filaEntradas = $('<tr>');
   filaEntradas.append($('<td>').text(entradasSeleccionadas + ' entrada(s)'));
-  filaEntradas.append($('<td>').text('$' + totalEntradas.toFixed(2)));
+  filaEntradas.append($('<td>').text(formatearPrecio(totalEntradas))); // Formatear totalEntradas
   filaEntradas.append($('<td>').html('<button class="btn btn-danger btn-sm eliminar-entradas">Eliminar</button>'));
   tablaBody.append(filaEntradas);
+  var totalCompra = totalEntradas; //almacenar total de entradas $
 
   // Iterar sobre los combos seleccionados y agregar filas a la tabla
   combosSeleccionados.forEach(function (combo) {
     var filaCombo = $('<tr>');
     filaCombo.append($('<td>').text(combo.detalle));
-    filaCombo.append($('<td>').text('$' + combo.precio));
+    filaCombo.append($('<td>').text(formatearPrecio(combo.precio))); // Formatear combo.precio
     filaCombo.append(
       $('<td>').html(
         '<button class="btn btn-danger btn-sm eliminar-combo" data-id="' + combo.id + '">Eliminar</button>',
       ),
     );
     tablaBody.append(filaCombo);
+
+    // Sumar el precio del combo al total de la compra
+    totalCompra += parseFloat(combo.precio);
   });
+  $('.text-center h4').text('Total: ' + formatearPrecio(totalCompra)); // Formatear totalCompra
 }
 
 // Botones de eliminar para tabla de compra
@@ -138,3 +143,9 @@ $(document).on('click', '.eliminar-entradas', function () {
   $('#cantidadEntradas').val(1);
   actualizarTablaCompra();
 });
+function formatearPrecio(numero) {
+  var num = parseFloat(numero).toFixed(2);
+  var partes = num.split('.');
+  partes[0] = partes[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  return '$' + partes.join(',');
+}
