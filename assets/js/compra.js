@@ -9,7 +9,11 @@ $(document).ready(function () {
   $('#cantidadEntradas').on('change', function () {
     let cantidad = parseInt($(this).val());
     if (cantidad < 1) {
-      alert('La cantidad mínima de entradas debe ser 1.');
+      Swal.fire({
+        icon: 'warning',
+        title: 'Cantidad no válida',
+        text: 'La cantidad mínima de entradas debe ser 1.',
+      });
       entradasSeleccionadas = 1;
       $(this).val(1);
     } else {
@@ -31,11 +35,19 @@ $(document).on('click', '.buttonAgregar', function () {
   });
 
   if (productoExistente) {
-    alert('El producto ya está en el carrito.');
+    Swal.fire({
+      icon: 'info',
+      title: 'Producto ya agregado',
+      text: 'El producto ya está en el carrito.',
+    });
   } else {
     combosSeleccionados.push({ id: productoId, detalle: productoDetalle, precio: productoPrecio });
     actualizarTablaCompra();
-    alert('Producto ' + productoId + ' agregado al carrito!');
+    Swal.fire({
+      icon: 'success',
+      title: 'Producto agregado',
+      text: productoDetalle + ' agregado al carrito!',
+    });
   }
 });
 
