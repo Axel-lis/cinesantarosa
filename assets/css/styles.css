@@ -204,7 +204,6 @@ body {
   background-size: cover;
   height: 300px;
   border-radius: 10px 10px 0 0;
-  padding: 20px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   -webkit-border-radius: 10px 10px 0 0;
@@ -311,11 +310,14 @@ body {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 #peliculasTitulos {
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: center !important; 
-    gap: 1px; 
-    padding-bottom: 20px; 
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    gap: 1px;
+    margin: 0;
+    padding: 0;
+    margin-right: 2em;
 }
 
 #peliculasTitulos .col-2 {
@@ -463,12 +465,11 @@ body {
 }
 .datos-personales-container{
     background-color: #f8f9fa;
-      margin-left: 50px;
 }
 @media (max-width: 768px) {
   .navbar-brand {
     margin: 0 auto;
-    padding-right: 0;
+    padding-right: 85px;
     padding-left: 0;
     display: flex;
     justify-content: center;
@@ -567,6 +568,7 @@ body {
   height: 8rem;
 
 }
+
 
 }
 

@@ -1,6 +1,7 @@
 var combosSeleccionados = [];
 var entradasSeleccionadas = 1; // Por defecto, 1 entrada
 var precioEntrada = 0;
+let idPeliculaGlobal;
 
 $(document).ready(function () {
   getProducts();
@@ -71,6 +72,8 @@ function getProducts() {
     console.error('ID de película no definido en la URL.');
     return;
   }
+  // Asignar el valor a la variable global
+  idPeliculaGlobal = idPelicula;
 
   $.ajax({
     url: `https://www.cinesantarosa.com.ar/api/ws/ventashow/${idPelicula}`,
@@ -82,11 +85,11 @@ function getProducts() {
       if (data && data.combos) {
         const productosHabilitados = data.combos.filter((combo) => combo.cbactive === '1');
         $('#productos-container').empty();
-
+        /*! para no cachear imagenes agregar:
+          ?v=${Math.random()}
+          */
         productosHabilitados.forEach((combo) => {
-          const imgUrl = `https://www.cinesantarosa.com.ar/assets/img/combos/${combo.id}/${
-            combo.id
-          }.png?v=${Math.random()}`;
+          const imgUrl = `https://www.cinesantarosa.com.ar/assets/img/combos/${combo.id}/${combo.id}.png`;
           const productoHtml = `
             <div class="col-6 col-md-3 p-3">
               <div class="producto">
@@ -157,14 +160,35 @@ $(document).on('click', '.eliminar-combo, .eliminar-entradas', function () {
   actualizarTablaCompra();
 });
 
-// Validar compra
-function validarCompra() {
-  if (entradasSeleccionadas < 1) {
-    Swal.fire('Error', 'Debes seleccionar al menos una entrada.', 'error');
+// Validar compra --> +de 1 y agotadas
+async function validarCompra() {
+  try {
+    const response = await fetch(`https://www.cinesantarosa.com.ar/api/ws/ventashow/${idPeliculaGlobal}`);
+    if (!response.ok) {
+      Swal.fire('Error', 'Hubo un problema al verificar la disponibilidad.', 'error');
+      return false;
+    }
+
+    const data = await response.json();
+
+    if (data.show.agotadas) {
+      Swal.fire('Error', 'Lo sentimos, las entradas para esta función están agotadas.', 'error');
+      return false;
+    }
+
+    if (entradasSeleccionadas < 1) {
+      Swal.fire('Error', 'Debes seleccionar al menos una entrada.', 'error');
+      return false;
+    }
+
+    return true; // Todo está en orden, proceder con la compra.
+  } catch (error) {
+    console.error('Error al verificar la disponibilidad:', error);
+    Swal.fire('Error', 'Hubo un problema con la conexión. Inténtalo de nuevo.', 'error');
     return false;
   }
-  return true;
 }
+
 // Procesar compra
 function procesarCompra() {
   // Mostrar carga mientras se procesa el pago
@@ -211,7 +235,6 @@ function procesarCompra() {
     },
   });
 }
-
 // Función para mostrar el estado de carga
 function mostrarCarga() {
   $('#progreso').addClass('centrado');

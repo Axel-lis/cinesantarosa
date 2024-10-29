@@ -46,7 +46,7 @@ function getSemana() {
   });
 }
 function renderTitulos() {
-  const untitulo = `<div class="col-sm-6 col-md-4 col-lg-2 mb-3">
+  const untitulo = `<div class="col col-md-2">
 		<a href="#{mvtitle}">
 			<img src="https://www.cinesantarosa.com.ar/assets/img/peliculas/{mvimg}" class="img-fluid movie-poster" alt="{mvtitle}">
 		</a>
