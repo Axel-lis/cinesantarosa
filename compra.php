@@ -87,7 +87,7 @@
             </table>
             <div class="text-center w-100" style="background-color: #fff; padding: 10px; margin-top:-15px;">
                 <h4 class="text-secondary"></h4>
-                <button class="btn btn-secondary">PREPARAR PAGO</button>
+                <button id="prepararPago" class="btn btn-secondary">PREPARAR PAGO</button>
             </div>
         </div>
     </div>
