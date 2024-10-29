@@ -5,6 +5,9 @@ var precioEntrada = 0;
 $(document).ready(function () {
   getProducts();
 
+  // Reflejar la entrada por defecto en la tabla de compra al cargar la página
+  actualizarTablaCompra();
+
   // Escuchar cambios en el select de cantidad de entradas
   $('#cantidadEntradas').on('change', function () {
     let cantidad = parseInt($(this).val());
@@ -74,6 +77,9 @@ function getProducts() {
       const data = response.show;
       precioEntrada = parseFloat(data.precio);
 
+      // Asegúrate de que el precio se haya recibido correctamente.
+      console.log('Precio de la entrada:', precioEntrada);
+
       if (data && data.combos) {
         $('#productos-container').empty();
 
@@ -85,16 +91,19 @@ function getProducts() {
             combo.id
           }.png?v=${Math.random()}`;
           const productoHtml = `
-                        <div class="col-6 col-md-3 p-3">
-                            <div class="producto">
-                                <img src="${imgUrl}" alt="" class="img-fluid">
-                            </div>
-                            <button class="buttonAgregar" data-id="${combo.id}" data-detalle="${combo.detalle}" data-precio="${combo.precio}">Agregar</button>
-                        </div>
-                    `;
+            <div class="col-6 col-md-3 p-3">
+                <div class="producto">
+                    <img src="${imgUrl}" alt="" class="img-fluid">
+                </div>
+                <button class="buttonAgregar" data-id="${combo.id}" data-detalle="${combo.detalle}" data-precio="${combo.precio}">Agregar</button>
+            </div>
+          `;
 
           $('#productos-container').append(productoHtml);
         });
+
+        // Actualiza la tabla con las entradas seleccionadas y precio.
+        actualizarTablaCompra();
       } else {
         console.error('No se encontraron productos habilitados.');
       }
@@ -118,7 +127,7 @@ function actualizarTablaCompra() {
   filaEntradas.append($('<td>').text(formatearPrecio(totalEntradas))); // Formatear totalEntradas
   filaEntradas.append($('<td>').html('<button class="btn btn-danger btn-sm eliminar-entradas">Eliminar</button>'));
   tablaBody.append(filaEntradas);
-  var totalCompra = totalEntradas; //almacenar total de entradas $
+  var totalCompra = totalEntradas; // Almacenar total de entradas $
 
   // Iterar sobre los combos seleccionados y agregar filas a la tabla
   combosSeleccionados.forEach(function (combo) {
@@ -135,6 +144,7 @@ function actualizarTablaCompra() {
     // Sumar el precio del combo al total de la compra
     totalCompra += parseFloat(combo.precio);
   });
+
   $('.text-center h4').text('Total: ' + formatearPrecio(totalCompra)); // Formatear totalCompra
 }
 
@@ -149,12 +159,13 @@ $(document).on('click', '.eliminar-combo', function () {
 
   actualizarTablaCompra();
 });
-
+// Botón de eliminar para la cantidad de entradas
 $(document).on('click', '.eliminar-entradas', function () {
   entradasSeleccionadas = 1; // Restablecer a 1 entrada por defecto
   $('#cantidadEntradas').val(1);
   actualizarTablaCompra();
 });
+
 function formatearPrecio(numero) {
   var num = parseFloat(numero).toFixed(2);
   var partes = num.split('.');
